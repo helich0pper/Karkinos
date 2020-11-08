@@ -1,0 +1,43 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* Nav */
+.navbar {
+    background: #ff8c00 !important;
+}
+
+.nav-link {
+    color: black;
+    transition: 0.2s;
+}
+
+    .nav-link:hover {
+        color: white;
+        transition: 0.2s;
+    }
+
+.current {
+    color: white;
+}
+
+/* Custom */
+
+.bg-orange {
+    background: #ff8c00 !important;
+}
+
+.hidden {
+    display: none;
+}
+
+.terminal {
+    background: rgb(44, 44, 44);
+    color: rgb(6, 224, 6);
+    border-color: rgb(6, 224, 6);
+}
+
+    .terminal:focus {
+        background: rgb(44, 44, 44) !important;
+        color: rgb(6, 224, 6) !important;
+    }

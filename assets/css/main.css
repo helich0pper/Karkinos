@@ -1,0 +1,48 @@
+html{
+  scroll-behavior: smooth;
+}
+
+.current{
+    color: orange !important;
+}
+  
+/* Custom */
+
+.bg-orange{
+    background:#7bf8be !important;
+}
+
+.hidden{
+  display: none;
+}
+
+.terminal{
+    background:rgb(44, 44, 44);
+    color:rgb(6, 224, 6);
+    border-color:rgb(6, 224, 6);
+}
+
+.terminal:focus{
+  background:rgb(44, 44, 44) !important;
+  color:rgb(6, 224, 6) !important;
+}
+
+#title{
+  color:#7bf8be;
+}
+
+#sub-title{
+  color: #FFF;
+}
+
+#green{
+  margin-top: 5%;
+}
+
+.intro-text{
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.letter-space{
+  letter-spacing: 5px;
+}
