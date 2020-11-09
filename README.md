@@ -17,18 +17,18 @@ Karkinos is a light-weight 'Swiss Army Knife' for penetration testing and/or hac
 
 # Demo
 ## Home Menu
-Landing page and quick access menu. <br>
-![Home 1](https://github.com/helich0pper/Karkinos/blob/main/screenshots/home.png) <br> <br>
+Landing page and quick access menu. <br> \
+![Home 1](https://github.com/helich0pper/Karkinos/blob/main/screenshots/home.png) <br>
 
-User stats are displayed here. Currently, the stats recorded are only the total hashes and hash types cracked successfully. <br>
+User stats are displayed here. Currently, the stats recorded are only the total hashes and hash types cracked successfully. <br> \
 ![Home 2](https://github.com/helich0pper/Karkinos/blob/main/screenshots/home2.png) <br>
 
 ## Encoding/Decoding
-This page allows you to encode/decode in common formats (more may be added soon)
+This page allows you to encode/decode in common formats (more may be added soon)  <br> \
 ![Encode and Decode](https://github.com/helich0pper/Karkinos/blob/main/screenshots/encode.png) <br>
  
 ## Encrypt/Decrypt
-Encrypting and decrypting text or files is made easy and is fully trusted since it is done locally.
+Encrypting and decrypting text or files is made easy and is fully trusted since it is done locally. <br> \
 ![Encrypt and Decrypt](https://github.com/helich0pper/Karkinos/blob/main/screenshots/encrypt.png) <br>
 
 ## Reverse Shell Handling
@@ -46,10 +46,11 @@ Karkinos can generate commonly used hashes such as:
 * SHA1
 * SHA256
 * SHA512
+ <br> \
 ![Generating Hashes](https://github.com/helich0pper/Karkinos/blob/main/screenshots/convert.png) <br>
 
 ## Cracking Hashes
-Karkinos offers the option to crack hashes using a built-in wordlist consisting of over 15 million common and breached passwords. This list can easily be modified and/or completely replaced.
+Karkinos offers the option to crack hashes using a built-in wordlist consisting of over 15 million common and breached passwords. This list can easily be modified and/or completely replaced. <br> \
 ![Cracking Hashes](https://github.com/helich0pper/Karkinos/blob/main/screenshots/cracking.png) <br>
 
 # Future Work
