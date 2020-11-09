@@ -1,5 +1,5 @@
 # Disclaimer 
-Use this tool to make **permitted** penetration tests or any hacking CTF's easier. This tool should be used on applications that you have permission to attack **only**. Any misuse or damage caused will be solely the users’ responsibility. <br>
+Use this tool to make penetration tests or any hacking CTF's more efficient. This tool should be used on applications that you have permission to attack **only**. Any misuse or damage caused will be solely the users’ responsibility. <br>
 Please check the known bugs and issues at the bottom before installation.
 
 # What is Karkinos?
