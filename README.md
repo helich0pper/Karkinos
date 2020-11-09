@@ -18,7 +18,7 @@ Karkinos is a light-weight 'Swiss Army Knife' for penetration testing and/or hac
 # Demo
 ## Home Menu
 Landing page and quick access menu. <br>
-![Home 1](https://github.com/helich0pper/Karkinos/blob/main/screenshots/home.png) <br> \
+![Home 1](https://github.com/helich0pper/Karkinos/blob/main/screenshots/home.png) <br> <br>
 
 User stats are displayed here. Currently, the stats recorded are only the total hashes and hash types cracked successfully. <br>
 ![Home 2](https://github.com/helich0pper/Karkinos/blob/main/screenshots/home2.png) <br>
