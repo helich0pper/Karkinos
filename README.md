@@ -51,7 +51,7 @@ Karkinos can generate commonly used hashes such as:
 
 ## Cracking Hashes
 Karkinos offers the option to crack hashes using a built-in wordlist consisting of over 15 million common and breached passwords. This list can easily be modified and/or completely replaced. <br> \
-![Cracking Hashes](https://github.com/helich0pper/Karkinos/blob/main/screenshots/cracking.png) <br>
+![Cracking Hashes](https://github.com/helich0pper/Karkinos/blob/main/screenshots/crack.png) <br>
 
 # Future Work
 Karkinos is a new release and still needs significant work. Pull requests and bug reports are always appreciated. <br>
