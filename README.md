@@ -21,7 +21,7 @@ Landing page and quick access menu.
 ![Home 1](http://url/to/img.png) <br>
 
 User stats are displayed here. Currently, the stats recorded are only the total hashes and hash types cracked successfully. 
-![Home 2](http://url/to/img.png) <br>
+![Home 2](https://github.com/helich0pper/Karkinos/blob/main/screenshots/convert.png) <br>
 
 ## Encoding/Decoding
 This page allows you to encode/decode in common formats (more may be added soon)
