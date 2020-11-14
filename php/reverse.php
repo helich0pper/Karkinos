@@ -12,12 +12,12 @@
 </head>
 
 <!-- NavBar -->
-<nav class="navbar navbar-light navbar-expand-md navbar navbar-expand-lg fixed-top" id="mainNav">
+<nav class="navbar navbar-light navbar-expand-md navbar navbar-expand-lg" id="mainNav">
     <div class="container"><button data-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"
             value="Menu"><i class="fa fa-bars"></i></button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="nav navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="../index.php">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link text-primary" href="../index.php">Dashboard</a></li>
                 <li class="nav-item"><a class="nav-link" href="encode.php">Encode/Decode</a></li>
                 <li class="nav-item"><a class="nav-link" href="encrypt.php">Encrypt/Decrypt</a></li>
                 <li class="nav-item"><a class="nav-link current" href="reverse.php">Reverse Shell Handling</a></li>
@@ -37,35 +37,20 @@
             </div>
         </div>
     </header>
-    <?php session_start();
-        $pid = "";
-        /*class ServerThread extends Thread {
-            public function run() {
-                system("start python ../bin/Server/app.py", $output);    
-            }
-        }*/
-
-        if($_SERVER['REQUEST_METHOD'] == "POST"){
-            system("start python ../bin/Server/app.py", $output);    
-            //$server = new ServerThread();
-            //$server->start();
-        }
-    ?>
     <!-- Main -->
     <main class="text-white">
 
     <div class="row justify-content-center">
         <div class="col-lg-3 mx-3">
-            <h3><u>Launch Server</u></h3>
+            <h3><u>Steps to Launch Server</u></h3>
             <ol class="pl-3">
                 <li><h5>Click Start Listener</h5></li>
                 <li><h5>Go to the provided link</h5></li>
                 <li><h5>Set up your listener</h5></li>
             </ol>
             <button type="submit" class="btn btn-outline-danger btn-block py-5" id="go">Start Listener</button>
-            <button type="button" onclick="alert('Coming soon...')" class="btn btn-outline-warning btn-block" id="reset">Reset Server</button>
+            <button type="button" class="btn btn-outline-warning btn-block" id="shutdown">Shutdown Server</button>
             <p id="out" class="mt-4"></p>
-            <p id="pid"><?= $pid?></p>
         </div>
     </div>
     </main>

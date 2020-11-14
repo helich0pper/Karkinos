@@ -17,7 +17,7 @@
             value="Menu"><i class="fa fa-bars"></i></button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="nav navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="../index.php">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link text-primary" href="../index.php">Dashboard</a></li>
                 <li class="nav-item"><a class="nav-link" href="encode.php">Encode/Decode</a></li>
                 <li class="nav-item"><a class="nav-link" href="encrypt.php">Encrypt/Decrypt</a></li>
                 <li class="nav-item"><a class="nav-link" href="reverse.php">Reverse Shell Handling</a></li>

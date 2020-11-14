@@ -13,11 +13,10 @@
 <script>
 
     let plot = false;
+    hashChart.style.display = "none";
     function elementInView(elem){
         return $(window).scrollTop() < $(elem).offset().top + $(elem).height() ;
     };
-
-    // I know. I know...
     $(window).scroll(function(){
         if (elementInView($('#hashChart')) && !plot){
             plotHashes();
@@ -32,7 +31,7 @@
         const hashChart = document.getElementById("hashChart");
 
         <?php
-            if(sizeof($data) !== 0){
+            if(sizeof($data) != 0){
                 foreach($data[0] as $d){
         ?>
             stats.push(<?= $d ?>);
@@ -44,10 +43,8 @@
         for(i in stats){
             if(stats[i] != 0){
                 statMessage.style.display = "none";
+                hashChart.style.display = "block";
                 break;
-            }
-            else{
-                hashChart.style.display = "none";
             }
         }
         

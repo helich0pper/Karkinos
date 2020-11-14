@@ -11,8 +11,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     if(strlen($password = $_POST['password']) != 16){
         array_push($errors, "The length of the password (key) must be 16 characters");
     }
-    if($_POST['isFile'] === true){
-        $data = file_get_contents(realpath($_POST['data']), false, null);
+    if($_POST['isFile'] === "true"){
+        //$data = file_get_contents(realpath($_POST['data']), false, null);
+        $data = $_FILES['encryptUploadFile']['name'];
     }else{
         $data = $_POST['data'];
     }
@@ -29,7 +30,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     }
     $ret->out = $out;
     $ret->errors = $errors;
-    echo json_encode($ret);
+    echo json_encode($data);
 }
 
 function warning_handler($errno, $errstr) { }

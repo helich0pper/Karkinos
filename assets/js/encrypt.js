@@ -11,11 +11,10 @@ $(document).ready(function(){
     $("#encryptSubmit").click(function(){
         let data = "";
         let isFile = false;
-        if($("#encryptUploadFile").get(0).files.length === 0){
+        if(!$("#encryptUploadFile").val()){
              data = $("#encryptData").val();
         }else{
-            data = $("#encryptUploadFile").val();
-            isFile = true;
+            isFile = "true";
         }
         const password = $("#encryptPassword").val();
         const IV = $("#encryptIv").val();
@@ -25,11 +24,10 @@ $(document).ready(function(){
     $("#decryptSubmit").click(function(){
         let data = "";
         let isFile = false;
-        if($("#decryptUploadFile").get(0).files.length === 0){
+        if(!$("#decryptUploadFile").val()){
             data = $("#decryptData").val();    
         }else{
-            data = $("#decryptUploadFile").val();
-            isFile = true;
+            isFile = "true";
         }
         const password = $("#decryptPassword").val();
         const IV = $("#decryptIv").val();
@@ -50,6 +48,7 @@ function crypto(method, data, password, IV, isFile){
         },
         dataType: "json",
         success: function(res){
+            console.log(res);
             object = res;
             errorLength = object.errors.length;
             if(errorLength != 0){

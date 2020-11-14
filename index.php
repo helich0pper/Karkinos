@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Karkinos</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
@@ -31,7 +31,7 @@
                 <div class="row-fluid">
                     <div class="container-fluid mb-5">
                         <!--<a class="btn btn-link btn-circle" role="button" href="#menu"><i class="fa fa-angle-double-down animated"></i></a>-->
-						<p class="text-primary" style="font-family:arial">V 1.0</p>
+						<p class="text-primary" style="font-family:arial">V 0.1</p>
                     </div>
                     <div class="col-lg-12 col-md-12 mx-auto pt-5" id="menu">
                             <a class="btn btn-primary btn-lg btn-default mx-2 py-4 px-4" href="php/encode.php">Encode/Decode</span></a>
@@ -43,20 +43,44 @@
             </div>
             <div class="row-fluid">
                 <div class="col-lg-7 mx-auto">
-                    <h1 class="pb-4 letter-space">Stats</h1>
+                    <h1 class="letter-space">Stats</h1>
                     <hr style="background-color:white;" class="mb-5">
                         <canvas id="hashChart"></canvas>
                         <?php include "includes/chart.php" ?>
                         <h5 id="statMessage">No statistics to display yet.</h5>
                 </div>
+                <div class="col-lg-7 pt-3 mx-auto">
+                    <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#confirmModal">
+                        Clear Stats
+                    </button>
+                </div>
             </div>
         </div>
     </header>
+
+        <!-- Confirm Modal -->
+        <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Are you sure?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-danger"><b>All you stats will be reset and cannot be recovered.<b></p>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger">Yes</button>
+                </div>
+            </div>
+        </div>
+        </div>
+
     <footer>
         <?php include "includes/footer.php" ?>
     </footer>
     </div>
-    
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>

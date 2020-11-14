@@ -18,7 +18,7 @@
             value="Menu"><i class="fa fa-bars"></i></button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="nav navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="../index.php">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link text-primary" href="../index.php">Dashboard</a></li>
                 <li class="nav-item"><a class="nav-link" href="encode.php">Encode/Decode</a></li>
                 <li class="nav-item"><a class="nav-link current" href="#">Encrypt/Decrypt</a></li>
                 <li class="nav-item"><a class="nav-link" href="reverse.php">Reverse Shell Handling</a></li>
@@ -58,7 +58,7 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-5 col-lg-5">
-                    <form method="POST" onsubmit="return false" id="encrypt" class="text-white">
+                    <form method="POST" onsubmit="return false" id="encrypt" class="text-white" enctype=multipart/form-data>
                         <div class="form-group">
                             <div class="form-group">
                                 <label for="data" class="font-weight-bold">Text to <span class="text-success">Encrypt</span></label>
@@ -77,7 +77,7 @@
                         <button type="reset" class="btn btn-warning mt-2 mr-2 p-2 px-3">Clear</button>
                         <button type="submit" class="btn btn-success mt-2 mr-2 p-2" name="encryptSubmit" id="encryptSubmit">Encrypt</button>
                     </form>
-                    <form method="POST" onsubmit="return false" id="decrypt" class="text-white d-none">
+                    <form method="POST" onsubmit="return false" id="decrypt" class="text-white d-none" enctype=multipart/form-data>
                         <div class="form-group">
                             <div class="form-group">
                                 <label for="data" class="font-weight-bold">Text to <span class="text-danger">Decrypt</span></label>

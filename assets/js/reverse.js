@@ -1,30 +1,31 @@
 $(document).ready(function(){
     $("#go").click(function(){
-        $("#out").html("Listening server: <a href='http://localhost:5555/' target='_blank'>http://localhost:5555/</a>");
+        $("#out").html("Listening server: <a href='http://127.0.0.1:5555/' target='_blank'>http://localhost:5555/</a>");
         start();
     });
-    $("#reset").click(function(){
-        reset();
+    $("#shutdown").click(function(){
+        $("#out").html("<p></p>");
+        shutdown();
     });
 });
 
 function start(){
     jQuery.ajax({
-        url: "reverse.php",
+        url: "../includes/pid.php",
         type: "POST",
         dataType: "json",
         success: function(res){
+            console.log(res);
         }
     });
 }
 
-function reset(){
+function shutdown(){
     jQuery.ajax({
-        url: "restart.php",
+        url: "http://127.0.0.1:5555/shutdown",
         type: "POST",
         dataType: "json",
         success: function(res){
-            
         }
     });
 }

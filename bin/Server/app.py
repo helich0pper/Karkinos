@@ -8,6 +8,12 @@ app = Flask(__name__)
 
 wsgi_app = app.wsgi_app
 
+def shutdown_server():
+    func = request.environ.get('werkzeug.server.shutdown')
+    if func is None:
+        raise RuntimeError('Server not running')
+    func()
+
 def startListen():
     global client_address, client_socket, s
     # bind to the IP and PORT
@@ -53,9 +59,10 @@ def index():
         out += "\n\n"
     return render_template('index.html', out=out)
 
-@app.route('/restart')
-def restart():
-    print("")
+@app.route('/shutdown', methods=['POST'])
+def shutdown():
+    shutdown_server()
+    return 'Server shutting down...'
 
 if __name__ == '__main__':
     SERVER_HOST = "0.0.0.0"
