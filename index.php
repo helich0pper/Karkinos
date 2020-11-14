@@ -25,7 +25,7 @@
                         <div class="col-lg-8 mx-auto">
                             <h1 class="brand-heading" id="title">Karkinos</h1>
                             <p class="intro-text" id="sub-title">A swiss army knife</p>
-							</div>
+			</div>
                     </div>
                 </div>
                 <div class="row-fluid">
