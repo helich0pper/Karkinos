@@ -71,7 +71,7 @@
                 <div class="modal-body">
                     <p class="text-danger"><b>All you stats will be reset and cannot be recovered.<b></p>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-danger">Yes</button>
+                    <button type="button" class="btn btn-danger" id="confirmReset">Yes</button>
                 </div>
             </div>
         </div>

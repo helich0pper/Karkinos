@@ -2,7 +2,7 @@
     $db = new SQLite3('db/main.db');
     $data = array();
     
-    $results = $db->query('SELECT * FROM hashes');
+    $results = $db->query('SELECT * FROM hashes;');
 
     while ($res = $results->fetchArray(1)){
         array_push($data, $res);
@@ -12,6 +12,12 @@
 
 <script>
 
+    $(document).ready(function(){
+        $("#confirmReset").click(function(){
+            postReset();
+        });
+    });
+
     let plot = false;
     hashChart.style.display = "none";
     function elementInView(elem){
@@ -19,13 +25,14 @@
     };
     $(window).scroll(function(){
         if (elementInView($('#hashChart')) && !plot){
-            plotHashes();
+            var stats = readyHashes();
+            plotHashes(stats);
             plot = true;
         }
             
     });
 
-    function plotHashes(){
+    function readyHashes(){
         var stats = [];
         const statMessage = document.getElementById("statMessage");
         const hashChart = document.getElementById("hashChart");
@@ -47,7 +54,11 @@
                 break;
             }
         }
-        
+
+        return stats;
+    }
+
+    function plotHashes(stats){
         var ctx = hashChart.getContext('2d');
         var doughnutChart = new Chart(ctx, {
                 type: 'doughnut',
@@ -75,6 +86,23 @@
                         duration: 2000,
                     },
                 }
+        });
+    }
+
+
+    function postReset(){
+        jQuery.ajax({
+            url: "php/stats.php",
+            type: "POST",
+            data: {
+                reset: 1
+            },
+            dataType: "json",
+            success: function(res){
+                statMessage.style.display = "block";
+                hashChart.style.display = "none";
+                $('#confirmModal').modal('toggle');
+            }
         });
     }
 </script>
