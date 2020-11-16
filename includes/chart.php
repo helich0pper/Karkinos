@@ -11,7 +11,6 @@
 ?>
 
 <script>
-
     $(document).ready(function(){
         $("#confirmReset").click(function(){
             postReset();
@@ -20,17 +19,6 @@
 
     let plot = false;
     hashChart.style.display = "none";
-    function elementInView(elem){
-        return $(window).scrollTop() < $(elem).offset().top + $(elem).height() ;
-    };
-    $(window).scroll(function(){
-        if (elementInView($('#hashChart')) && !plot){
-            var stats = readyHashes();
-            plotHashes(stats);
-            plot = true;
-        }
-            
-    });
 
     function readyHashes(){
         var stats = [];
@@ -105,4 +93,17 @@
             }
         });
     }
+
+    function elementInView(elem){
+        return $(window).scrollTop() < $(elem).offset().top + $(elem).height() ;
+    };
+
+    $(window).scroll(function(){
+        if (elementInView($('#clear')) && !plot){
+            var stats = readyHashes();
+            plotHashes(stats);
+            plot = true;
+        }
+            
+    });
 </script>

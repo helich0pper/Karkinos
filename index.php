@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="row-fluid">
-                <div class="col-lg-7 mx-auto">
+                <div class="col-lg-7 mx-auto pt-5">
                     <h1 class="letter-space">Stats</h1>
                     <hr style="background-color:white;" class="mb-5">
                         <canvas id="hashChart"></canvas>
@@ -50,7 +50,7 @@
                         <h5 id="statMessage">No statistics to display yet.</h5>
                 </div>
                 <div class="col-lg-7 pt-3 mx-auto">
-                    <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#confirmModal">
+                    <button type="button" class="btn btn-outline-warning" data-toggle="modal" id="clear" data-target="#confirmModal">
                         Clear Stats
                     </button>
                 </div>
