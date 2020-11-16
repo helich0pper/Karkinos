@@ -9,16 +9,25 @@ $(document).ready(function(){
     })
 
     $("#encryptSubmit").click(function(){
-        let data = "";
-        let isFile = false;
+        var formData = new FormData();
+        let isFile = 0;
+        formData.append('method', 0);
+
         if(!$("#encryptUploadFile").val()){
-             data = $("#encryptData").val();
+             formData.append('data', $("#encryptData").val());
         }else{
-            isFile = "true";
+            isFile = 1;
         }
-        const password = $("#encryptPassword").val();
-        const IV = $("#encryptIv").val();
-        crypto(0, data, password, IV, isFile);
+        formData.append('password', $("#encryptPassword").val());
+        formData.append('IV', $("#encryptIv").val());
+
+        if(isFile === 1){
+            formData.append('file', $('#encryptUploadFile')[0].files[0]);
+            cryptoFile(formData);
+        }
+        else{
+            crypto(formData);
+        }
     });
 
     $("#decryptSubmit").click(function(){
@@ -35,32 +44,52 @@ $(document).ready(function(){
     });
 });
 
-function crypto(method, data, password, IV, isFile){
+
+function crypto(formData){
+    formData.append('isFile', "false");
     jQuery.ajax({
         url: "../includes/crypto.php",
         type: "POST",
-        data: {
-            data: data,
-            password: password,
-            IV: IV,
-            method: method,
-            isFile: isFile,
-        },
-        dataType: "json",
+        processData: false,
+        contentType: false,
+        data: formData,
         success: function(res){
-            console.log(res);
-            object = res;
-            errorLength = object.errors.length;
-            if(errorLength != 0){
+            const obj = jQuery.parseJSON(res);
+            if(obj.errors.length === 0){
+                $("#out").html(obj.out);
+                $("#errors").html("");
+            }
+            else{
                 let ret = "";
-                for(let i = 0; i < errorLength; i++){
-                    ret += object.errors[i] + "<br>";
+                for(i in obj.errors){
+                    ret += obj.errors[i] + "<br>";
                 }
                 $("#errors").html(ret);
             }
-            else{
-                $("#out").html(object.out);
+        }
+    });
+}
+
+function cryptoFile(formData){
+    formData.append('isFile', "true");
+    jQuery.ajax({
+        url: "../includes/crypto.php",
+        type: "POST",
+        processData: false,
+        contentType: false,
+        data: formData,
+        success: function(res){
+            const obj = jQuery.parseJSON(res);
+            if(obj.errors.length === 0){
+                $("#out").html(obj.out);
                 $("#errors").html("");
+            }
+            else{
+                let ret = "";
+                for(i in obj.errors){
+                    ret += obj.errors[i] + "<br>";
+                }
+                $("#errors").html(ret);
             }
         }
     });
