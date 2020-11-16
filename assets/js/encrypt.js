@@ -31,16 +31,25 @@ $(document).ready(function(){
     });
 
     $("#decryptSubmit").click(function(){
-        let data = "";
-        let isFile = false;
+        var formData = new FormData();
+        let isFile = 0;
+        formData.append('method', 1);
+
         if(!$("#decryptUploadFile").val()){
-            data = $("#decryptData").val();    
+             formData.append('data', $("#decryptData").val());
         }else{
-            isFile = "true";
+            isFile = 1;
         }
-        const password = $("#decryptPassword").val();
-        const IV = $("#decryptIv").val();
-        crypto(1, data, password, IV, isFile);
+        formData.append('password', $("#decryptPassword").val());
+        formData.append('IV', $("#decryptIv").val());
+
+        if(isFile === 1){
+            formData.append('file', $('#decryptUploadFile')[0].files[0]);
+            cryptoFile(formData);
+        }
+        else{
+            crypto(formData);
+        }
     });
 });
 

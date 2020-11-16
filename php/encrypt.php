@@ -48,7 +48,6 @@
     <!-- Main -->
     <main>
     <?php
-        session_start();
         include "../includes/crypto.php";
         set_error_handler("warning_handler", E_WARNING);
     ?>
