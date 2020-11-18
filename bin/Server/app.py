@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 
 import os
 import time
+import struct
 import socket
 import threading
 app = Flask(__name__)
@@ -16,26 +17,32 @@ def shutdown_server():
 
 def startListen():
     global client_address, client_socket, s
-    # bind to the IP and PORT
     s.bind((SERVER_HOST, SERVER_PORT))
-    # listen with maximum connect attempts of 5
     s.listen(5)
-    # accept the connection and save it to a new socket
     client_socket, client_address = s.accept()
-    return getData(client_socket)
+
+    return client_socket
 
 def getData(client_socket):
-    return client_socket.recv(BUFFER_SIZE).decode()
+    #client_socket.setblocking(0)
+    client_socket.settimeout(0.5)
+    data = bytearray()
+    try:
+        while 1:
+            packet = client_socket.recv(BUFFER_SIZE)
+            #print(packet)
+            data.extend(packet)
+    except socket.timeout as e:
+        print(data)
+        return data.decode()
+
+    return data.decode()
 
 def shell(c):
     global thread, client_socket, s
-    command = c
-
-    if command == "exit":
-        s.close()
-        return False
-    client_socket.send(b'')
+    command = c + "\n"
     client_socket.send(command.encode())
+
     return True
 
 @app.route('/config', methods = ['POST'])
@@ -44,7 +51,8 @@ def config():
     SERVER_PORT = int(request.form['port'])
     print(SERVER_PORT)
     if connected == False:
-        out = startListen()
+        tmpsock = startListen()
+        out = getData(tmpsock)
         connected = True
     return render_template('index.html', out=out)
 
@@ -53,7 +61,6 @@ def index():
     global out, client_socket
     if request.method == "POST":
         c = request.form['command']
-        out += c + "\n"
         shell(c)
         out += getData(client_socket)
         out += "\n\n"
@@ -72,13 +79,12 @@ if __name__ == '__main__':
     client_address = ""
     out = ""
     connected = False
-    s = socket.socket()
-    thread = threading.Thread()
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     HOST = os.environ.get('SERVER_HOST', 'localhost')
     try:
         PORT = int(os.environ.get('SERVER_PORT', '5555'))
     except ValueError:
         PORT = 5555
-    app.run("0.0.0.0", PORT)
+    app.run(HOST, PORT)
     
