@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $("#go").click(function(){
-        $("#out").html("Listening server: <a href='http://127.0.0.1:5555/' target='_blank'>http://localhost:5555/</a>");
+        $("#out").removeClass("d-none");
         start();
     });
     $("#shutdown").click(function(){
@@ -14,9 +14,6 @@ function start(){
         url: "../includes/pid.php",
         type: "POST",
         dataType: "json",
-        success: function(res){
-            console.log(res);
-        }
     });
 }
 
@@ -25,7 +22,5 @@ function shutdown(){
         url: "http://127.0.0.1:5555/shutdown",
         type: "POST",
         dataType: "json",
-        success: function(res){
-        }
     });
 }
