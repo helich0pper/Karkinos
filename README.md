@@ -14,6 +14,7 @@ Karkinos is a light-weight 'Swiss Army Knife' for penetration testing and/or hac
 * Tested with PHP 7.4.9
 * Python3
 * pip3
+* Raspberry Pi Zero friendly :) (crack passwords at your own risk)
 
 # Demo
 ## Home Menu
