@@ -33,7 +33,7 @@ Encrypting and decrypting text or files is made easy and is fully trusted since 
 ![Encrypt and Decrypt](https://github.com/helich0pper/Karkinos/blob/main/screenshots/encrypt.png) <br>
 
 ## Reverse Shell Handling
-Reverse shells can be captured and interacted with on this page. Currently, this is only tested with the provided Python reverse shell. <br>
+Reverse shells can be captured and interacted with on this page. Currently, this is being reworked to improve compatibility. <br>
 ### Create a listener instance
 ![Listener 1](https://github.com/helich0pper/Karkinos/blob/main/screenshots/reverse.png) <br>
 ### Configure the listener
