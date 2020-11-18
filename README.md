@@ -58,7 +58,7 @@ Karkinos offers the option to **simultaneously** crack hashes using a built-in w
 Karkinos is a new release and still needs significant work. Pull requests and bug reports are always appreciated. <br>
 Below are known bugs and issues:
 * Reverse shell server code is currently being reworked for compatibility
-* Application is not yet responsive
+* Application is not yet responsive (best suitable for 1920x1080)
 
 # Find me on
 <a href="https://twitter.com/helich0pper">Twitter</a>
