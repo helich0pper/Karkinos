@@ -37,6 +37,7 @@ function hashString($line, $method){
             $ret = hash('sha512',$line);
         break;
     }
+
     return $ret;
 }
 
@@ -62,7 +63,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $action = $_POST['action'];
     if($action === "hash"){
         $hash = hashString($input, $_POST['hashMethod']);
-        array_push($out, $input, $_POST['hashMethod'], $hash);
+        array_push($out, htmlspecialchars($input), htmlspecialchars($_POST['hashMethod']), $hash);
     }else{
         $method = getHashType(strlen($input));
         if( ($wordlist = fopen("../wordlists/passlist.txt", "r")) && ($method !== false) ){
@@ -80,7 +81,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                     $password = crack($wordlist, $input, $method);
                 break;
             }
-            array_push($out, $input, $method, $password);
+            array_push($out, htmlspecialchars($input), htmlspecialchars($method), htmlspecialchars($password));
             if($password !== "Password not found."){
                 $db = new SQLite3('../db/main.db');
                 $db->query('UPDATE hashes SET '.$method.' = '.$method.'+1');
@@ -88,7 +89,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             }
 
         }else{
-            array_push($out, $input, "Unknown", "Unknown");
+            array_push($out, htmlspecialchars($input), "Unknown", "Unknown");
         }
     }
     
