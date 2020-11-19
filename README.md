@@ -12,7 +12,7 @@ Karkinos is a light-weight 'Swiss Army Knife' for penetration testing and/or hac
 # Dependancies
 * Any server capable of hosting PHP; tested with Apache Server 
 * Tested with PHP 7.4.9
-* Python3
+* Python3 (in your path)
 * pip3
 * Raspberry Pi Zero friendly :) (crack hashes at your own risk)
 
