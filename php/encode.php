@@ -63,9 +63,9 @@
             <!-- Column Main -->
                 <div class="col-md-2 col-sm-10 col-lg-2">
                     <h1><?= $i ?></h1>
-                    <button type="button" class="btn btn-success m-1" onclick="encodeDisplay(this)">Encode</button>
-                    <button type="button" class="btn btn-danger m-1" onclick="decodeDisplay(this)">Decode</button><br>
-                    <a href="#" class="btn btn-primary m-1">Top</a>
+                    <button type="button" class="btn btn-outline-success btn-block" onclick="encodeDisplay(this)">Encode</button>
+                    <button type="button" class="btn btn-outline-danger btn-block" onclick="decodeDisplay(this)">Decode</button><br>
+                    <a href="#" class="btn btn-outline-primary btn-block">Top</a>
                 </div>  
             <!-- Column Encode -->
                 <div class="col-md-4 col-sm-11 col-lg-4 flex-d"  id="<?= $encodeId ?>">
@@ -75,11 +75,11 @@
                             <label for="encode-value" class="font-weight-bold">
                                     Value to <span class="text-success">encode</span>:
                                 </label>
-                                <textarea class="form-control terminal pb-5" placeholder="Enter value" id="<?= $inputId."-encode" ?>" required></textarea>
+                                <textarea class="form-control terminal pb-6" placeholder="Enter value" id="<?= $inputId."-encode" ?>" required></textarea>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-danger">Go</button>
-                                <button type="reset" class="btn btn-warning">Clear</button>
+                                <button type="submit" class="btn btn-outline-success">Encode</button>
+                                <button type="reset" class="btn btn-outline-warning">Clear</button>
                             </div>
                         </form>
                     </div>
@@ -92,11 +92,11 @@
                                 <label for="encode-value" class="font-weight-bold">
                                     Value to <span class="text-danger">decode</span>:
                                 </label>
-                                <textarea class="form-control terminal pb-5" placeholder="Enter value" id="<?= $inputId."-decode" ?>" required></textarea>
+                                <textarea class="form-control terminal pb-6" placeholder="Enter value" id="<?= $inputId."-decode" ?>" required></textarea>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-danger">Go</button>
-                                <button type="reset" class="btn btn-warning">Clear</button>
+                                <button type="submit" class="btn btn-outline-danger">Decode</button>
+                                <button type="reset" class="btn btn-outline-warning">Clear</button>
                             </div>
                         </form>
                     </div>
@@ -107,10 +107,10 @@
                             <form onsubmit="copy(this);return false;">
                                 <div class="form-group">
                                     <label for="encode-value" class="font-weight-bold">Output</label>
-                                    <textarea class="form-control terminal pb-5" placeholder="Output will display here" id="<?= $outputId ?>"></textarea>
+                                    <textarea class="form-control terminal pb-6" placeholder="Output will display here" id="<?= $outputId ?>"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-outline-light">Copy to Clipboard</button>
+                                    <button type="submit" class="btn btn-outline-light btn-block">Copy to Clipboard</button>
                                 </div>
                             </form>
                         </div>

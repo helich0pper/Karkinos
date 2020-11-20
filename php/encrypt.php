@@ -58,11 +58,11 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-5 col-lg-5">
-                    <form method="POST" onsubmit="return false" id="encrypt" class="text-white" enctype=multipart/form-data>
+                    <form onsubmit="return false" id="encrypt" class="text-white">
                         <div class="form-group">
                             <div class="form-group">
                                 <label for="data" class="font-weight-bold">Text to <span class="text-success">Encrypt</span></label>
-                                <textarea class="form-control terminal pb-5" name="encryptData" id="encryptData" placeholder="Enter plain text"></textarea>
+                                <textarea class="form-control terminal pb-7" name="encryptData" id="encryptData" placeholder="Enter plain text"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="password" class="font-weight-bold">Password</label>
@@ -73,15 +73,15 @@
                                 <input type="text" class="form-control terminal" name="encryptIv" id="encryptIv" placeholder="Initialization vector">
                             </div>
                         </div>
-                        <input type="file" name="encryptUploadFile" id="encryptUploadFile" class="btn btn-primary mt-2 mr-2">
+                        <input type="file" name="encryptUploadFile" id="encryptUploadFile" class="btn btn-primary btn-block">
                         <button type="reset" class="btn btn-warning mt-2 mr-2 p-2 px-3">Clear</button>
                         <button type="submit" class="btn btn-success mt-2 mr-2 p-2" name="encryptSubmit" id="encryptSubmit">Encrypt</button>
                     </form>
-                    <form method="POST" onsubmit="return false" id="decrypt" class="text-white d-none" enctype=multipart/form-data>
+                    <form onsubmit="return false" id="decrypt" class="text-white d-none">
                         <div class="form-group">
                             <div class="form-group">
                                 <label for="data" class="font-weight-bold">Text to <span class="text-danger">Decrypt</span></label>
-                                <textarea class="form-control terminal pb-5" name="decryptData" id="decryptData" placeholder="Enter plain text"></textarea>
+                                <textarea class="form-control terminal pb-7" name="decryptData" id="decryptData" placeholder="Enter plain text"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="password" class="font-weight-bold">Password</label>
@@ -92,7 +92,7 @@
                                 <input type="text" class="form-control terminal" name="decryptIv" id="decryptIv" placeholder="Initialization vector">
                             </div>
                         </div>
-                        <input type="file" name="decryptUploadFile" id="decryptUploadFile" class="btn btn-primary mt-2 mr-2">
+                        <input type="file" name="decryptUploadFile" id="decryptUploadFile" class="btn btn-primary btn-block mt-2">
                         <button type="reset" class="btn btn-warning mt-2 mr-2 p-2 px-3">Clear</button>
                         <button type="submit" class="btn btn-danger mt-2 mr-2 p-2" name="decryptSubmit" id="decryptSubmit">Decrypt</button>
                     </form>
@@ -101,7 +101,7 @@
                     <form class="text-white">
                         <div class="form-group">
                             <label for="out" class="font-weight-bold">Output</label>
-                            <textarea class="form-control terminal pb-5" name="out" id="out" placeholder="Output will display here"></textarea>
+                            <textarea class="form-control terminal pb-7" name="out" id="out" placeholder="Output will display here"></textarea>
                         </div>
                         <div class="form-group">
                             <button type="button" class="btn btn-outline-light btn-block" onclick="copy()">Copy to clipboard</button>
