@@ -54,7 +54,7 @@ Encrypting and decrypting text or files is made easy and is fully trusted since 
 ![Encrypt and Decrypt](https://github.com/helich0pper/Karkinos/blob/main/screenshots/encrypt.png) <br>
 
 ## Reverse Shell Handling
-Reverse shells can be captured and interacted with on this page. Currently, this is being reworked to improve compatibility. <br>
+Reverse shells can be captured and interacted with on this page. <br>
 ### Create a listener instance
 ![Listener 1](https://github.com/helich0pper/Karkinos/blob/main/screenshots/reverse.png) <br>
 ### Configure the listener
@@ -76,7 +76,7 @@ Karkinos offers the option to **simultaneously** crack hashes using a built-in w
 ![Cracking Hashes](https://github.com/helich0pper/Karkinos/blob/main/screenshots/crack.png) <br>
 
 # Future Work
-Karkinos is a new release and still needs significant work. Pull requests and bug reports are always appreciated. <br>
+Pull requests and bug reports are always appreciated. <br>
 Below are known bugs and issues:
 * Reverse shell server code is currently being reworked but it works fine
 * Application is not yet responsive (best suitable for 1920x1080)
