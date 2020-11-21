@@ -78,7 +78,7 @@
                                 <textarea class="form-control terminal pb-6" placeholder="Enter value" id="<?= $inputId."-encode" ?>" required></textarea>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-outline-success">Encode</button>
+                                <button type="submit" class="btn btn-success px-5">GO</button>
                                 <button type="reset" class="btn btn-outline-warning">Clear</button>
                             </div>
                         </form>
@@ -95,7 +95,7 @@
                                 <textarea class="form-control terminal pb-6" placeholder="Enter value" id="<?= $inputId."-decode" ?>" required></textarea>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-outline-danger">Decode</button>
+                                <button type="submit" class="btn btn-danger px-5">GO</button>
                                 <button type="reset" class="btn btn-outline-warning">Clear</button>
                             </div>
                         </form>

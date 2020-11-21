@@ -14,7 +14,7 @@
 </head>
 
 <?php
-    $IP = $_SERVER['HTTP_HOST'];
+    $IP = explode(":", $_SERVER['HTTP_HOST']);
 ?>
 
 <!-- NavBar -->
@@ -56,7 +56,7 @@
             </ol>
             <button type="submit" class="btn btn-outline-danger btn-block py-5" id="go">Start Listener</button>
             <button type="button" class="btn btn-outline-warning btn-block" id="shutdown">Shutdown Server</button>
-            <p id="out" class="mt-4 d-none"><?php echo "Listening server: <a href='http://".$IP.":5555' target='_blank'>http://".$IP.":5555/</a>";?></p>
+            <p id="out" class="mt-4 d-none"><?php echo "Listening server: <a href='http://".$IP[0].":5555' target='_blank'>http://".$IP[0].":5555/</a>";?></p>
         </div>
     </div>
     </main>

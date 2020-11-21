@@ -33,6 +33,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         case 256:
             $errors = check(strlen($IV), strlen($password), 32, 256);
         break;
+        default:
+            array_push($errors, "Invalid key length chosen.");
     }
 
     if($_POST['isFile'] === "true"){

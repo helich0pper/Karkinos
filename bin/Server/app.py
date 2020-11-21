@@ -81,10 +81,9 @@ if __name__ == '__main__':
     connected = False
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-    HOST = os.environ.get('SERVER_HOST', 'localhost')
     try:
         PORT = int(os.environ.get('SERVER_PORT', '5555'))
     except ValueError:
         PORT = 5555
-    app.run(HOST, PORT)
+    app.run(SERVER_HOST, PORT)
     
