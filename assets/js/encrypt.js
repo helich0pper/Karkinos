@@ -18,6 +18,8 @@ $(document).ready(function(){
         }else{
             isFile = 1;
         }
+        formData.append('mode', $("#encryptMode").val());
+        formData.append('size', $("#encryptSize").val());
         formData.append('password', $("#encryptPassword").val());
         formData.append('IV', $("#encryptIv").val());
 
@@ -40,6 +42,8 @@ $(document).ready(function(){
         }else{
             isFile = 1;
         }
+        formData.append('mode', $("#decryptMode").val());
+        formData.append('size', $("#decryptSize").val());
         formData.append('password', $("#decryptPassword").val());
         formData.append('IV', $("#decryptIv").val());
 

@@ -1,7 +1,7 @@
 <footer>
         <div class="footer-copyright text-white text-center mt-5">
             <div class="row justify-content-center mb-4">
-            <div class="col-lg-2">
+            <div class="col-md">
                 <a class="btn btn-primary btn-lg btn-default" href="https://github.com/helich0pper" target="_blank"><i class="fa fa-github "></i></a>
                 <a class="btn btn-primary btn-lg btn-default" href="https://twitter.com/helich0pper" target="_blank"><i class="fa fa-twitter"></i></a>
             </div>

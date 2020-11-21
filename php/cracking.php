@@ -36,8 +36,8 @@
                     <h1 class="text-white">Crack Hashes</h1>
                 </div>
                 <div class="container-fluid">
-                    <button class="btn btn-outline-success mr-2" id="crackButton">Crack Hash</button>
-                    <button class="btn btn-outline-success mr-2" id="hashButton">Convert to Hash</button>
+                    <button class="btn btn-outline-success m-2" id="crackButton">Crack Hash</button>
+                    <button class="btn btn-outline-success m-2" id="hashButton">Convert to Hash</button>
                 </div>
             </div>
         </div>
@@ -78,7 +78,8 @@
         </div>
         <!-- Convert -->
         <div class="col-md-9 col-lg-9 ml-5 d-none" id="hashForm">
-            <div class="form-group">
+            <form onsubmit="return false">
+                <div class="form-group">
                         <p class="text-white">Paste values seperated by a <span class="text-warning">space</span>:</p>
                         <textarea class="terminal form-control" rows="10" id="hashHashes" name="hashHashes" placeholder="Hash strings"></textarea>
                     </div>
@@ -114,7 +115,9 @@
                         <tbody>
                         </tbody>
                     </table>
-                    </div>
+                </div>
+            </form>
+        </div>
     </div>
     </div>
     </main>

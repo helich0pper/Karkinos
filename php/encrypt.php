@@ -65,6 +65,21 @@
                                 <textarea class="form-control terminal pb-7" name="encryptData" id="encryptData" placeholder="Enter plain text"></textarea>
                             </div>
                             <div class="form-group">
+                                <label for="mode" class="font-weight-bold">Mode</label>
+                                <select class="form-control terminal" id="encryptMode">
+                                    <option>CBC</option>
+                                    <option>ECB</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="size" class="font-weight-bold">Key Size</label>
+                                <select class="form-control terminal" id="encryptSize">
+                                    <option>128</option>
+                                    <option>192</option>
+                                    <option>256</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label for="password" class="font-weight-bold">Password</label>
                                 <input type="text" class="form-control terminal" name="encryptPassword" id="encryptPassword" placeholder="Key used to encrypt">
                             </div>
@@ -82,6 +97,21 @@
                             <div class="form-group">
                                 <label for="data" class="font-weight-bold">Text to <span class="text-danger">Decrypt</span></label>
                                 <textarea class="form-control terminal pb-7" name="decryptData" id="decryptData" placeholder="Enter plain text"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="mode" class="font-weight-bold">Mode</label>
+                                <select class="form-control terminal" id="decryptMode">
+                                    <option>CBC</option>
+                                    <option>ECB</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="size" class="font-weight-bold">Key Size</label>
+                                <select class="form-control terminal" id="decryptSize">
+                                    <option>128</option>
+                                    <option>192</option>
+                                    <option>256</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="password" class="font-weight-bold">Password</label>

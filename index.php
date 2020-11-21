@@ -33,7 +33,7 @@
                 <div class="row-fluid">
                     <div class="container-fluid mb-5">
                         <!--<a class="btn btn-link btn-circle" role="button" href="#menu"><i class="fa fa-angle-double-down animated"></i></a>-->
-						<p class="text-primary" style="font-family:arial">V 0.1</p>
+						<p class="text-primary" style="font-family:arial">V 1.0</p>
                     </div>
                     <div class="col-md-12 mx-auto pt-5" id="menu">
                             <a class="btn btn-primary btn-lg btn-default m-2 py-4 px-4" href="php/encode.php">Encode/Decode</span></a>
