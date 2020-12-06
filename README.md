@@ -12,32 +12,36 @@ Karkinos is a light-weight 'Swiss Army Knife' for penetration testing and/or hac
 # Dependancies
 * Any server capable of hosting PHP; tested with Apache Server 
 * Tested with PHP 7.4.9
-* Python3 (in your path)
+* Python3
+  Make sure it is in your path as:
+    Windows: ```python```
+    Linux: ```python3```
 * pip3
 * Raspberry Pi Zero friendly :) (crack hashes at your own risk)
 
 # Installing
 This installation guide assumes you have all the dependancies.
 ## Linux
-1. git clone https://github.com/helich0pper/Karkinos.git
-2. cd Karkinos
-3. pip3 install -r requirements.txt
-4. cd wordlists && tar -xf passlist.zip
+1. ```git clone https://github.com/helich0pper/Karkinos.git```
+2. ```cd Karkinos```
+3. ```pip3 install -r requirements.txt```
+4. ```cd wordlists && tar -xf passlist.zip```
 You can also unzip it manually using file explorer if tar is not installed. Just make sure passlist.txt is in **wordlists** directory.
-5. Add **extension=php_sqlite3.dll** to your php.ini file. <br>
+5. Add ```extension=php_sqlite3.dll``` to your php.ini file. <br>
 If you don't know where to find this, refer to the PHP [docs](https://www.php.net/manual/en/configuration.file.php#:~:text=d%20php%20PHP%20will%20load,ini%20as%20configuration%20files.).
-6. Thats it! Now just host it using your preferred web server or run: **php -S 127.0.0.1:8888** in the Karkinos directory.
+6. Thats it! Now just host it using your preferred web server or run: ```php -S 127.0.0.1:8888``` in the Karkinos directory. 
+**Important: using port 5555 will conflict with the reverse shell handler server**
 
 ## Windows
-1. git clone https://github.com/helich0pper/Karkinos.git
-2. cd Karkinos
-3. pip3 install -r requirements.txt
-4. cd wordlists && tar -xf passlist.zip <br>
+1. ```git clone https://github.com/helich0pper/Karkinos.git```
+2. ```cd Karkinos```
+3. ```pip3 install -r requirements.txt```
+4. ```cd wordlists && tar -xf passlist.zip``` <br>
 You can also unzip it manually using file explorer if tar is not installed. Just make sure passlist.txt is in **wordlists** directory.
-5. Add **extension=php_sqlite3.dll** to your php.ini file. <br>
+5. Add ```extension=php_sqlite3.dll``` to your php.ini file. <br>
 If you don't know where to find this, refer to the PHP [docs](https://www.php.net/manual/en/configuration.file.php#:~:text=d%20php%20PHP%20will%20load,ini%20as%20configuration%20files.).
-6. Thats it! Now just host it using your preferred web server or run: **php -S 127.0.0.1:8888** in the Karkinos directory.
-
+6. Thats it! Now just host it using your preferred web server or run: ```php -S 127.0.0.1:8888``` in the Karkinos directory.
+**Important: using port 5555 will conflict with the reverse shell handler server**
 # Demo
 ## Home Menu
 Landing page and quick access menu. <br> \
