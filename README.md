@@ -1,6 +1,7 @@
 # Disclaimer 
 Use this tool to make penetration tests or any hacking CTF's more efficient. This tool should be used on applications that you have permission to attack **only**. Any misuse or damage caused will be solely the users’ responsibility. <br>
-**Please check the known bugs and issues at the bottom before installation.**
+**Please check the known bugs and issues at the bottom before installation.** <br>
+A Wiki page for troubleshooting is coming very soon...
 
 # What is Karkinos?
 Karkinos is a light-weight 'Swiss Army Knife' for penetration testing and/or hacking CTF's. Currently, Karkinos offers the following:
@@ -9,20 +10,20 @@ Karkinos is a light-weight 'Swiss Army Knife' for penetration testing and/or hac
 * Reverse shell handling
 * Cracking and generating hashes
 
-# Dependancies
+# Dependencies 
 * Any server capable of hosting PHP; tested with Apache Server 
 * Tested with PHP 7.4.9
 * Python3<br>
   Make sure it is in your path as:<br>
     Windows: ```python```<br>
     Linux: ```python3```<br>
-    If it is not, please change the commands in includes/pid.php
+    If it is not, please change the commands in ```includes/pid.php```
 * pip3
 * Raspberry Pi Zero friendly :) (crack hashes at your own risk)
 
 # Installing
-This installation guide assumes you have all the dependancies.
-## Linux
+This installation guide assumes you have all the dependencies.
+## Linux/BSD
 1. ```git clone https://github.com/helich0pper/Karkinos.git```
 2. ```cd Karkinos```
 3. ```pip3 install -r requirements.txt```
@@ -30,9 +31,9 @@ This installation guide assumes you have all the dependancies.
 You can also unzip it manually using file explorer if tar is not installed. Just make sure passlist.txt is in **wordlists** directory.
 5. Add ```extension=php_sqlite3.dll``` to your php.ini file. <br>
 If you don't know where to find this, refer to the PHP [docs](https://www.php.net/manual/en/configuration.file.php#:~:text=d%20php%20PHP%20will%20load,ini%20as%20configuration%20files.).
-6. Thats it! Now just host it using your preferred web server or run: ```php -S 127.0.0.1:8888``` in the Karkinos directory. 
-**Important: using port 5555 will conflict with the reverse shell handler server**
-
+6. Thats it! Now just host it using your preferred web server or run: ```php -S 127.0.0.1:8888``` in the Karkinos directory. <br>
+**Important: using port 5555 will conflict with the reverse shell handler server** <br>
+If you insist on using port 5555, change the reverse shell handler server ```PORT``` value in ```/bin/Server/app.py Line 87```
 ## Windows
 1. ```git clone https://github.com/helich0pper/Karkinos.git```
 2. ```cd Karkinos```
@@ -41,8 +42,9 @@ If you don't know where to find this, refer to the PHP [docs](https://www.php.ne
 You can also unzip it manually using file explorer if tar is not installed. Just make sure passlist.txt is in **wordlists** directory.
 5. Add ```extension=php_sqlite3.dll``` to your php.ini file. <br>
 If you don't know where to find this, refer to the PHP [docs](https://www.php.net/manual/en/configuration.file.php#:~:text=d%20php%20PHP%20will%20load,ini%20as%20configuration%20files.).
-6. Thats it! Now just host it using your preferred web server or run: ```php -S 127.0.0.1:8888``` in the Karkinos directory.
-**Important: using port 5555 will conflict with the reverse shell handler server**
+6. Thats it! Now just host it using your preferred web server or run: ```php -S 127.0.0.1:8888``` in the Karkinos directory. <br>
+**Important: using port 5555 will conflict with the reverse shell handler server** <br>
+If you insist on using port 5555, change the reverse shell handler server ```PORT``` value in ```/bin/Server/app.py Line 87```
 # Demo
 ## Home Menu
 Landing page and quick access menu. <br> \
