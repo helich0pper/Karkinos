@@ -46,6 +46,7 @@ If you don't know where to find this, refer to the PHP [docs](https://www.php.ne
 **Important: using port 5555 will conflict with the reverse shell handler server** <br>
 If you insist on using port 5555, change the reverse shell handler server ```PORT``` value in ```/bin/Server/app.py Line 87```
 # Demo
+**Open screenshots in full screen for a better view**
 ## Home Menu
 Landing page and quick access menu. <br> \
 ![Home 1](https://github.com/helich0pper/Karkinos/blob/main/screenshots/home.png) <br>
