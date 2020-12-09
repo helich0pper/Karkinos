@@ -78,7 +78,6 @@
             </div>
         </div>
         </div>
-
     <footer>
         <?php include "includes/footer.php" ?>
     </footer>
