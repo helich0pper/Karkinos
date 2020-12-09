@@ -85,8 +85,8 @@ Karkinos offers the option to **simultaneously** crack hashes using a built-in w
 
 # Future Work
 Pull requests and bug reports are always appreciated. <br>
-Below are known bugs and issues:
-* Reverse shell handling server code is currently being reworked but it works fine
+Below are features to be added/fixed:
+* Creating a Wiki page to help customize Karkinos or troubleshoot common issues
 
 # Find me on
 <a href="https://twitter.com/helich0pper">Twitter</a>

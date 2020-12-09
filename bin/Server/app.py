@@ -15,9 +15,12 @@ def shutdown_server():
         raise RuntimeError('Server not running')
     func()
 
-def startListen():
-    global client_address, client_socket, s
-    s.bind((SERVER_HOST, SERVER_PORT))
+def startListen(PORT):
+    global SERVER_HOST
+
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    s.bind((SERVER_HOST, PORT))
     s.listen(5)
     client_socket, client_address = s.accept()
 
@@ -25,45 +28,52 @@ def startListen():
 
 def getData(client_socket):
     #client_socket.setblocking(0)
-    client_socket.settimeout(0.5)
+    client_socket.settimeout(1)
     data = bytearray()
     try:
         while 1:
             packet = client_socket.recv(BUFFER_SIZE)
-            #print(packet)
             data.extend(packet)
     except socket.timeout as e:
-        print(data)
         return data.decode()
 
     return data.decode()
 
-def shell(c):
-    global thread, client_socket, s
-    command = c + "\n"
-    client_socket.send(command.encode())
+def shell(command, client_socket):
+    global out
 
-    return True
+    ret = True
+
+    if command == "clear" or command == "\"clear\"":
+        out = ""
+    elif command == "exit" or command == "\"exit\"":
+        client_socket.close()
+        ret = False
+        out += "\nClosed."
+    else:
+        command += "\n"
+        client_socket.send(command.encode())
+
+    return ret
 
 @app.route('/config', methods = ['POST'])
 def config():
-    global SERVER_PORT, connected
-    SERVER_PORT = int(request.form['port'])
-    print(SERVER_PORT)
-    if connected == False:
-        tmpsock = startListen()
-        out = getData(tmpsock)
-        connected = True
-    return render_template('index.html', out=out)
+    global client_socket, out
+
+    PORT = int(request.form['port'])
+    client_socket = startListen(PORT)
+    out = getData(client_socket)
+    return render_template('index.html', out=out, startMsg="")
 
 @app.route('/', methods = ['POST', 'GET'])
 def index():
-    global out, client_socket
-    if request.method == "POST":
-        c = request.form['command']
-        shell(c)
-        out += getData(client_socket)
-        out += "\n\n"
+    global client_socket, out
+
+    if request.method == "POST" and client_socket != "":
+        command = request.form['command']
+        if shell(command, client_socket) == True:
+            out += getData(client_socket)
+            out += "\n\n"
     return render_template('index.html', out=out)
 
 @app.route('/shutdown', methods=['POST'])
@@ -73,17 +83,10 @@ def shutdown():
 
 if __name__ == '__main__':
     SERVER_HOST = "0.0.0.0"
-    SERVER_PORT = 5011
+    PORT = 5555  
     BUFFER_SIZE = 1024
     client_socket = ""
-    client_address = ""
     out = ""
-    connected = False
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-    try:
-        PORT = int(os.environ.get('SERVER_PORT', '5555'))
-    except ValueError:
-        PORT = 5555
+        
     app.run(SERVER_HOST, PORT)
     

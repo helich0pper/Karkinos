@@ -1,17 +1,17 @@
 ﻿<html>
 <head>
-    <title>Karkinos</title>
+    <title>Karkinos Reverse Shell</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
     <meta name=”viewport” content=”width =device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 <body class="bg-dark text-white">
     <!-- Header -->
     <header>
         <div class="row p-5">
-            <div class="col-md-5 col-sm-12 col-lg-5">
+            <div class="col-md">
                 <div class="container-fluid pb-3">
                     <h1 class="text-white">Reverse Shell Handling</h1>
                 </div>
@@ -22,7 +22,7 @@
     <main class="text-white">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-7 col-lg-7 ml-5">
+                <div class="col-md ml-5">
                     <!-- Shell -->
                     <form method="POST" action="/">
                         <div class="form-group">
@@ -42,17 +42,26 @@
                     </form>
                 </div>
                 <!-- Connect -->
-                <div class="col-md-4 col-lg-4 col-sm-10 ml-5">
+                <div class="col-md ml-5">
                     <form method="POST" action="/config">
                         <p class="text-white">Listener Configuration:</p>
                         <div class="form-group">
                             <label for="port" class="text-white">Port:</label>
                             <input type="number" id="port" name="port" class="terminal form-control" placeholder="Port to listen on" required>
                         </div>
+                        <p id="startMsg" class="mt-4">{{ startMsg }}</p>
                         <div class="form-group">
                             <button type="submit" class="btn btn-outline-success btn-block py-5" id="start"><h1>Start</h1></button>
                             <button type="button"  class="btn btn-outline-warning btn-block py-2" id="shutdown"><b>Shutdown Server</b></button>
-                            <p id="shutdownMsg" class="mt-4"></p>
+                            <p id="shutdownMsg" class="text-danger mt-4"></p>
+                            <h2 class="mt-4">Info:</h2>
+                            <ul class="tips">
+                                <li>Type "clear" to clear the terminal</li>
+                                <li>Type "exit" to close the connection</li>
+                                <li>You can start listening again at any time, even on the same port</li>
+                                <li>Listeners set up on the same port will recieve connections by turn; i.e first come fist serve</li>
+                                <li>Facing problems? Restarting the server might help :)</li>
+                            </ul>
                         </div>
                     </form>
                 </div>
@@ -61,9 +70,10 @@
     </main>
 
     <footer>
-        <div class="footer-copyright text-white text-center py-3">
-            &copy; 2020 Copyright:
-            <a href="https://github.com/helich0pper">helich0pper</a>
+        <div class="footer-copyright text-white text-center mt-5">
+            <div class="row justify-content-center mb-4">
+                <p>&copy; 2020<a href="https://github.com/helich0pper" class="text-green" target="_blank"> helich0pper</a></p>    
+            </div>
         </div>
     </footer>
     <script>
