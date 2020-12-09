@@ -4,7 +4,7 @@ $(document).ready(function(){
         start();
     });
     $("#shutdown").click(function(){
-        $("#out").html("<p></p>");
+        $("#out").addClass("d-none");
         shutdown();
     });
 });
