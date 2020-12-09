@@ -16,6 +16,8 @@
 <?php
     $IP = explode(":", $_SERVER['HTTP_HOST']);
 ?>
+<script>const IP = <?= "\"".$IP[0]."\"" ?> </script>
+
 
 <!-- NavBar -->
 <nav class="navbar navbar-light navbar-expand-md navbar navbar-expand-lg" id="mainNav">
