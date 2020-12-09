@@ -19,7 +19,7 @@ function start(){
 
 function shutdown(){
     jQuery.ajax({
-        url: "http://127.0.0.1:5555/shutdown",
+        url: "http://"+IP+":5555/shutdown",
         type: "POST",
         dataType: "json",
     });
