@@ -70,6 +70,9 @@ Reverse shells can be captured and interacted with on this page. <br>
 ![Listener 2](https://github.com/helich0pper/Karkinos/blob/main/screenshots/reverse2.png) <br>
 ### Start the listener and capture a shell
 ![Listener 3](https://github.com/helich0pper/Karkinos/blob/main/screenshots/reverse3.png) <br>
+Full reverse shell handling demo:
+[![Reverse Shell Handling Demo](http://i3.ytimg.com/vi/zriDUmHimXE/maxresdefault.jpg)](https://www.youtube.com/embed/zriDUmHimXE?modestbranding=1")
+
 
 ## Generating Hashes
 Karkinos can generate commonly used hashes such as:
