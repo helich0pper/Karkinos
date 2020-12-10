@@ -64,13 +64,13 @@ Encrypting and decrypting text or files is made easy and is fully trusted since 
 
 ## Reverse Shell Handling
 Reverse shells can be captured and interacted with on this page. <br>
-### Create a listener instance
+#### Create a listener instance
 ![Listener 1](https://github.com/helich0pper/Karkinos/blob/main/screenshots/reverse.png) <br>
-### Configure the listener
+#### Configure the listener
 ![Listener 2](https://github.com/helich0pper/Karkinos/blob/main/screenshots/reverse2.png) <br>
-### Start the listener and capture a shell
+#### Start the listener and capture a shell
 ![Listener 3](https://github.com/helich0pper/Karkinos/blob/main/screenshots/reverse3.png) <br>
-Full reverse shell handling demo:
+#### Full reverse shell handling demo:
 [![Reverse Shell Handling Demo](https://github.com/helich0pper/Karkinos/blob/main/screenshots/thumbnails/shell.png)](https://www.youtube.com/embed/zriDUmHimXE?modestbranding=1")
 
 
