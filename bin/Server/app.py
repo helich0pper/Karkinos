@@ -2,12 +2,14 @@ from flask import Flask, render_template, request
 
 import os
 import time
-import struct
 import socket
+import logging
 import threading
-app = Flask(__name__)
 
+app = Flask(__name__)
 wsgi_app = app.wsgi_app
+log = logging.getLogger('werkzeug')
+log.setLevel(logging.ERROR)
 
 def shutdown_server():
     func = request.environ.get('werkzeug.server.shutdown')
