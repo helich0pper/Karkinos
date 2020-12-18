@@ -1,5 +1,9 @@
 $(document).ready(function(){
-    //$('#header').height($(window).height());    
+    $("#scroller").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#menu").offset().top
+        }, 0);
+    });
 });
 
 $('#confirmModal').on('shown.bs.modal', function () {

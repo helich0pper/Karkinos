@@ -5,11 +5,12 @@
     <meta name="google" value="notranslate">
     <title>Karkinos</title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
-    <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/all.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
@@ -25,11 +26,11 @@
             value="Menu"><i class="fa fa-bars"></i></button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="nav navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link text-primary" href="../index.php">Dashboard</a></li>
-                <li class="nav-item"><a class="nav-link" href="encode.php">Encode/Decode</a></li>
-                <li class="nav-item"><a class="nav-link" href="encrypt.php">Encrypt/Decrypt</a></li>
-                <li class="nav-item"><a class="nav-link current" href="reverse.php">Reverse Shell Handling</a></li>
-                <li class="nav-item"><a class="nav-link" href="cracking.php">Crack Hashes</a></li>
+                <li class="nav-item"><a class="nav-link text-primary" href="../../index.php">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="../encode.php">Encode/Decode</a></li>
+                <li class="nav-item"><a class="nav-link" href="../encrypt.php">Encrypt/Decrypt</a></li>
+                <li class="nav-item"><a class="nav-link current" href="../modules.php">Modules</a></li>
+                <li class="nav-item"><a class="nav-link" href="../cracking.php">Crack Hashes</a></li>
             </ul>
         </div>
     </div>
@@ -38,9 +39,12 @@
     <!-- Header -->
     <header>
         <div class="row p-5">
-            <div class="col-md-5 col-sm-12 col-lg-5">
+            <div class="col-md">
                 <div class="container-fluid pb-3">
-                    <h1 class="text-white">Reverse Shell Handling</h1>
+                    <h1 class="text-white">
+                        Reverse Shell Handling
+                        <i class="fa fa-terminal text-success" aria-hidden="true"></i>   
+                    </h1>
                 </div>
             </div>
         </div>
@@ -58,12 +62,13 @@
             </ol>
             <button type="submit" class="btn btn-outline-danger btn-block py-5" id="go">Start Listener</button>
             <button type="button" class="btn btn-outline-warning btn-block" id="shutdown">Shutdown Server</button>
+            <button type="button" class="btn btn-outline-primary btn-block" id="back">All Modules</button>
             <p id="out" class="mt-4 d-none"><?php echo "Listening server: <a href='http://".$IP[0].":5555' target='_blank'>http://".$IP[0].":5555/</a>";?></p>
         </div>
     </div>
     </main>
 
-    <?php include "../includes/footer.php" ?>
-<script type="text/javascript" src='../assets/js/reverse.js'></script>
+    <?php include "../../includes/footer.php"?>
+<script type="text/javascript" src='../../assets/js/reverse.js'></script>
 </body>
 </html>

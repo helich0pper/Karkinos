@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/all.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
@@ -22,7 +23,7 @@
                 <li class="nav-item"><a class="nav-link text-primary" href="../index.php">Dashboard</a></li>
                 <li class="nav-item"><a class="nav-link" href="encode.php">Encode/Decode</a></li>
                 <li class="nav-item"><a class="nav-link current" href="#">Encrypt/Decrypt</a></li>
-                <li class="nav-item"><a class="nav-link" href="reverse.php">Reverse Shell Handling</a></li>
+                <li class="nav-item"><a class="nav-link" href="modules.php">Modules</a></li>
                 <li class="nav-item"><a class="nav-link" href="cracking.php">Crack Hashes</a></li>
             </ul>
         </div>

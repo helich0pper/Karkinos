@@ -3,7 +3,6 @@ $(document).ready(function(){
         $("#out").removeClass("d-none");
         start();
     });
-
     $("#shutdown").click(function(){
         $("#out").addClass("d-none");
         shutdown();
@@ -20,14 +19,14 @@ function start(){
         type: "POST",
         dataType: "json",
         data: {
-            method: "reverse"
+            method: "busting"
         }
     });
 }
 
 function shutdown(){
     jQuery.ajax({
-        url: "http://"+IP+":5555/shutdown",
+        url: "http://"+IP+":5556/shutdown",
         type: "POST",
         dataType: "json",
     });

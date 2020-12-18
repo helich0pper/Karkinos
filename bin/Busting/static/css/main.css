@@ -1,0 +1,26 @@
+.bg-orange {
+    background: #ff8c00 !important;
+}
+
+.hidden {
+    display: none;
+}
+
+.terminal {
+    background: rgb(44, 44, 44);
+    color: rgb(6, 224, 6);
+    border-color: rgb(6, 224, 6);
+}
+
+.terminal:focus {
+    background: rgb(44, 44, 44) !important;
+    color: rgb(6, 224, 6) !important;
+}
+
+a {
+    color: rgb(6, 224, 6);
+}
+
+a:hover {
+    color: orange;
+}

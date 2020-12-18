@@ -1,0 +1,89 @@
+﻿<html>
+<head>
+    <title>Karkinos</title>
+    <meta name=”viewport” content=”width =device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body class="bg-dark text-white">
+    <!-- Header -->
+    <header>
+        <div class="row p-5">
+            <div class="col-md-5 col-sm-12 col-lg-5">
+                <div class="container-fluid pb-3">
+                    <h1 class="text-white">Directory and File Busting</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main -->
+    <main class="text-white">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-7 col-lg-7 ml-5">
+                    <!-- Shell -->
+                    <form onsubmit="return false">
+                        <div class="form-group">
+                            <p class="text-white">Output:</p>
+                            <textarea class="terminal" id="out" style="min-width: 100%; min-height:50%" readonly></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-outline-light btn-block" id="copy">Copy to clipboard</button>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-warning btn-block" id="clear">Clear</button>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-success btn-block" id="download">Download output</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- Connect -->
+                <div class="col-md-4 col-lg-4 col-sm-10 ml-5">
+                    <form onsubmit="return false">
+                        <p class="text-white">Listener Configuration:</p>
+                        <div class="form-group">
+                            <label for="url" class="text-white">URL:</label>
+                            <input type="text" id="url" name="url" class="terminal form-control" placeholder="URL to bust" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hide" class="text-white"><span class="text-danger">Response</span> codes to hide (seperated by a <span class="text-warning">comma</span>):</label>
+                            <input type="text" id="hide" name="hide" class="terminal form-control" placeholder="eg. 404,500" value="404">
+                        </div>
+                        <div class="form-group">
+                            <label for="ext" class="text-white"><span class="text-danger">File</span> extensions to append (seperated by a <span class="text-warning">comma</span>):</label>
+                            <input type="text" id="ext" name="ext" class="terminal form-control" placeholder="eg. txt,php">
+                        </div>
+                        <div class="form-group">
+                            <label for="mode" class="font-weight-bold">Wordlist</label>
+                            <select class="form-control terminal" id="wordlist">
+                                <option>common</option>
+                                <option>small</option>
+                                <option>medium</option>
+                                <option>small-lowercase</option>
+                                <option>medium-lowecase</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-outline-success btn-block py-5" id="start"><h1>Start</h1></button>
+                            <button type="button" class="btn btn-outline-warning btn-block py-2" id="shutdown"><b>Shutdown Server</b></button>
+                            <p id="startMsg" class="mt-4"></p>
+                            <br/>
+                            <p id="shutdownMsg" class="mt-4"></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-copyright text-white text-center py-3">
+            &copy; 2020 Copyright:
+            <a href="https://github.com/helich0pper">helich0pper</a>
+        </div>
+    </footer>
+    <script type="text/javascript" src={{url_for('static', filename='js/bust.js')}}></script>
+</body>
+</html>

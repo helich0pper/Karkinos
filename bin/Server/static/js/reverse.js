@@ -10,7 +10,7 @@ $(document).ready(function(){
 
 function shutdown(){
     jQuery.ajax({
-        url: "http://127.0.0.1:5555/shutdown",
+        url: "/shutdown",
         type: "POST",
         dataType: "json",
         success: function(res){

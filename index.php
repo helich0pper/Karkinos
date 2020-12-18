@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/all.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -32,14 +33,13 @@
                 </div>
                 <div class="row-fluid">
                     <div class="container-fluid mb-5">
-                        <!--<a class="btn btn-link btn-circle" role="button" href="#menu"><i class="fa fa-angle-double-down animated"></i></a>-->
-						<p class="text-primary" style="font-family:arial">V 1.0</p>
+                        <button id="scroller" class="btn btn-link btn-circle" role="button" href="#menu"><i class="fa fa-angle-double-down animated"></i></button>
                     </div>
-                    <div class="col-md-12 mx-auto pt-5" id="menu">
-                            <a class="btn btn-primary btn-lg btn-default m-2 py-4 px-4" href="php/encode.php">Encode/Decode</span></a>
-                            <a class="btn btn-primary btn-lg btn-default m-2 py-4 px-4" href="php/encrypt.php">Encrypt/Decrypt</span></a>
-                            <a class="btn btn-primary btn-lg btn-default m-2 py-4 px-4" href="php/reverse.php">Reverse Shell Handling</span></a>
-                            <a class="btn btn-primary btn-lg btn-default m-2 py-4 px-4" href="php/cracking.php">Crack Hashes</span></a>
+                    <div class="col-md mx-auto pt-5" id="menu">
+                            <a class="btn btn-primary btn-lg btn-default m-2 py-4 px-4" href="php/encode.php">Encode / Decode</span></a>
+                            <a class="btn btn-primary btn-lg btn-default m-2 py-4 px-4" href="php/encrypt.php">Encrypt / Decrypt</span></a>
+                            <a class="btn btn-primary btn-lg btn-default m-2 py-4 px-4" href="php/modules.php">Modules</span></a>
+                            <a class="btn btn-primary btn-lg btn-default m-2 py-4 px-4" href="php/cracking.php">Crack / Generate Hashes</span></a>
                     </div>
                 </div>
             </div>

@@ -21,6 +21,15 @@ Karkinos is a light-weight 'Swiss Army Knife' for penetration testing and/or hac
 * pip3
 * Raspberry Pi Zero friendly :) (crack hashes at your own risk)
 
+# Newest Feature
+## Introducing Modules
+Modules are now in one place for better organisation and accessibility.
+![Modules](https://github.com/helich0pper/Karkinos/blob/main/screenshots/modules/modules.png) <br>
+## New Module
+#### Directory and File Busting demo:
+[![Directory and File Busting Demo](https://github.com/helich0pper/Karkinos/blob/main/screenshots/thumbnails/busting.png)]("https://www.youtube.com/watch?v=cS9j9FXs6bE?modestbranding=1")
+
+
 # Installing
 This installation guide assumes you have all the dependencies.
 ## Linux/BSD
@@ -33,7 +42,9 @@ You can also unzip it manually using file explorer if tar is not installed. Just
 If you don't know where to find this, refer to the PHP [docs](https://www.php.net/manual/en/configuration.file.php#:~:text=d%20php%20PHP%20will%20load,ini%20as%20configuration%20files.).
 6. Thats it! Now just host it using your preferred web server or run: ```php -S 127.0.0.1:8888``` in the Karkinos directory. <br>
 **Important: using port 5555 will conflict with the reverse shell handler server** <br>
-If you insist on using port 5555, change the reverse shell handler server ```PORT``` value in ```/bin/Server/app.py Line 87```
+If you insist on using port 5555, change the reverse shell handler server ```PORT``` value in ```/bin/Server/app.py Line 88```
+**Important: using port 5556 will conflict with the directory and file busting server** <br>
+If you insist on using port 5556, change the directory and file busting server ```PORT``` value in ```/bin/Busting/app.py Line 111```
 ## Windows
 1. ```git clone https://github.com/helich0pper/Karkinos.git```
 2. ```cd Karkinos```
@@ -45,6 +56,8 @@ If you don't know where to find this, refer to the PHP [docs](https://www.php.ne
 6. Thats it! Now just host it using your preferred web server or run: ```php -S 127.0.0.1:8888``` in the Karkinos directory. <br>
 **Important: using port 5555 will conflict with the reverse shell handler server** <br>
 If you insist on using port 5555, change the reverse shell handler server ```PORT``` value in ```/bin/Server/app.py Line 87```
+**Important: using port 5556 will conflict with the directory and file busting server** <br>
+If you insist on using port 5556, change the directory and file busting server ```PORT``` value in ```/bin/Busting/app.py Line 111```
 # Demo
 **Open screenshots in full screen for a better view**
 ## Home Menu
@@ -62,16 +75,31 @@ This page allows you to encode/decode in common formats (more may be added soon)
 Encrypting and decrypting text or files is made easy and is fully trusted since it is done locally. <br> \
 ![Encrypt and Decrypt](https://github.com/helich0pper/Karkinos/blob/main/screenshots/encrypt.png) <br>
 
-## Reverse Shell Handling
+## Modules
+More modules will be added. <br>
+![Modules](https://github.com/helich0pper/Karkinos/blob/main/screenshots/modules/modules.png) <br>
+
+### Reverse Shell Handling
 Reverse shells can be captured and interacted with on this page. <br>
 #### Create a listener instance
-![Listener 1](https://github.com/helich0pper/Karkinos/blob/main/screenshots/reverse.png) <br>
+![Listener 1](https://github.com/helich0pper/Karkinos/blob/main/screenshots/modules/reverse/reverse.png) <br>
 #### Configure the listener
-![Listener 2](https://github.com/helich0pper/Karkinos/blob/main/screenshots/reverse2.png) <br>
+![Listener 2](https://github.com/helich0pper/Karkinos/blob/main/screenshots/modules/reverse/reverse2.png) <br>
 #### Start the listener and capture a shell
-![Listener 3](https://github.com/helich0pper/Karkinos/blob/main/screenshots/reverse3.png) <br>
+![Listener 3](https://github.com/helich0pper/Karkinos/blob/main/screenshots/modules/reverse/reverse3.png) <br>
 #### Full reverse shell handling demo:
-[![Reverse Shell Handling Demo](https://github.com/helich0pper/Karkinos/blob/main/screenshots/thumbnails/shell.png)](https://www.youtube.com/embed/zriDUmHimXE?modestbranding=1")
+[![Reverse Shell Handling Demo](https://github.com/helich0pper/Karkinos/blob/main/screenshots/thumbnails/reverse.png)](https://www.youtube.com/embed/zriDUmHimXE?modestbranding=1")
+
+### Directory and File Busting
+#### Create an instance
+![Bust 1](https://github.com/helich0pper/Karkinos/blob/main/screenshots/modules/busting/busting1.png) <br>
+#### Configure it
+![Bust 2](https://github.com/helich0pper/Karkinos/blob/main/screenshots/modules/busting/busting2.png) <br>
+#### Start scanning
+![Bust 2](https://github.com/helich0pper/Karkinos/blob/main/screenshots/modules/busting/busting3.png) <br>
+#### Full Directory and File Busting demo:
+[![Directory and File Busting Demo](https://github.com/helich0pper/Karkinos/blob/main/screenshots/thumbnails/busting.png)]("https://www.youtube.com/watch?v=zriDUmHimXE?modestbranding=1")
+
 
 
 ## Generating Hashes
