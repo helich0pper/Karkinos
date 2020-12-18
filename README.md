@@ -23,7 +23,7 @@ Karkinos is a light-weight 'Swiss Army Knife' for penetration testing and/or hac
 
 # Newest Feature
 ## Introducing Modules
-Modules are now in one place for better organisation and accessibility.
+#### Modules are now in one place for better organisation and accessibility.
 ![Modules](https://github.com/helich0pper/Karkinos/blob/main/screenshots/modules/modules.png) <br>
 ## New Module
 #### Directory and File Busting demo:
