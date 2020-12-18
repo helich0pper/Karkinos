@@ -27,7 +27,7 @@ Karkinos is a light-weight 'Swiss Army Knife' for penetration testing and/or hac
 ![Modules](https://github.com/helich0pper/Karkinos/blob/main/screenshots/modules/modules.png) <br>
 ## New Module
 #### Directory and File Busting demo:
-[![Directory and File Busting Demo](https://github.com/helich0pper/Karkinos/blob/main/screenshots/thumbnails/busting.png)](https://www.youtube.com/embed/cS9j9FXs6bE?modestbranding=1")
+[![Directory and File Busting Demo](https://github.com/helich0pper/Karkinos/blob/main/screenshots/thumbnails/busting.png)](https://www.youtube.com/embed/cS9j9FXs6bE?modestbranding=1)
 
 
 # Installing
@@ -88,7 +88,7 @@ Reverse shells can be captured and interacted with on this page. <br>
 #### Start the listener and capture a shell
 ![Listener 3](https://github.com/helich0pper/Karkinos/blob/main/screenshots/modules/reverse/reverse3.png) <br>
 #### Full reverse shell handling demo:
-[![Reverse Shell Handling Demo](https://github.com/helich0pper/Karkinos/blob/main/screenshots/thumbnails/reverse.png)](https://www.youtube.com/embed/zriDUmHimXE?modestbranding=1")
+[![Reverse Shell Handling Demo](https://github.com/helich0pper/Karkinos/blob/main/screenshots/thumbnails/reverse.png)](https://www.youtube.com/embed/zriDUmHimXE?modestbranding=1)
 
 ### Directory and File Busting
 #### Create an instance
@@ -98,7 +98,7 @@ Reverse shells can be captured and interacted with on this page. <br>
 #### Start scanning
 ![Bust 2](https://github.com/helich0pper/Karkinos/blob/main/screenshots/modules/busting/busting3.png) <br>
 #### Full Directory and File Busting demo:
-[![Directory and File Busting Demo](https://github.com/helich0pper/Karkinos/blob/main/screenshots/thumbnails/busting.png)](https://www.youtube.com/embed/cS9j9FXs6bE?modestbranding=1")
+[![Directory and File Busting Demo](https://github.com/helich0pper/Karkinos/blob/main/screenshots/thumbnails/busting.png)](https://www.youtube.com/embed/cS9j9FXs6bE?modestbranding=1)
 
 
 
