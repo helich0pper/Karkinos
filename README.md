@@ -42,7 +42,7 @@ You can also unzip it manually using file explorer if tar is not installed. Just
 If you don't know where to find this, refer to the PHP [docs](https://www.php.net/manual/en/configuration.file.php#:~:text=d%20php%20PHP%20will%20load,ini%20as%20configuration%20files.).
 6. Thats it! Now just host it using your preferred web server or run: ```php -S 127.0.0.1:8888``` in the Karkinos directory. <br>
 **Important: using port 5555 will conflict with the reverse shell handler server** <br>
-If you insist on using port 5555, change the reverse shell handler server ```PORT``` value in ```/bin/Server/app.py Line 88```
+If you insist on using port 5555, change the reverse shell handler server ```PORT``` value in ```/bin/Server/app.py Line 88``` <br>
 **Important: using port 5556 will conflict with the directory and file busting server** <br>
 If you insist on using port 5556, change the directory and file busting server ```PORT``` value in ```/bin/Busting/app.py Line 111```
 ## Windows
@@ -55,7 +55,7 @@ You can also unzip it manually using file explorer if tar is not installed. Just
 If you don't know where to find this, refer to the PHP [docs](https://www.php.net/manual/en/configuration.file.php#:~:text=d%20php%20PHP%20will%20load,ini%20as%20configuration%20files.).
 6. Thats it! Now just host it using your preferred web server or run: ```php -S 127.0.0.1:8888``` in the Karkinos directory. <br>
 **Important: using port 5555 will conflict with the reverse shell handler server** <br>
-If you insist on using port 5555, change the reverse shell handler server ```PORT``` value in ```/bin/Server/app.py Line 87```
+If you insist on using port 5555, change the reverse shell handler server ```PORT``` value in ```/bin/Server/app.py Line 88``` <br>
 **Important: using port 5556 will conflict with the directory and file busting server** <br>
 If you insist on using port 5556, change the directory and file busting server ```PORT``` value in ```/bin/Busting/app.py Line 111```
 # Demo
