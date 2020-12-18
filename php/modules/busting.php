@@ -6,11 +6,8 @@
     <title>Karkinos</title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
-    <link rel="stylesheet" href="../../assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../../assets/css/main.css">
-    <link rel="stylesheet" type="text/css" href="../../assets/css/all.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
@@ -61,8 +58,8 @@
                 <li><h5>Set up your options</h5></li>
             </ol>
             <button type="submit" class="btn btn-outline-danger btn-block py-5" id="go">Start Fuzzer</button>
-            <button type="button" class="btn btn-outline-warning btn-block" id="shutdown">Shutdown Server</button>
-            <button type="button" class="btn btn-outline-primary btn-block" id="back">All Modules</button>
+            <button type="button" class="btn btn-outline-warning btn-block" id="shutdown"><i class="fas fa-power-off"></i> Shutdown Server</button>
+            <button type="button" class="btn btn-outline-primary btn-block" id="back"><i class="fas fa-arrow-left"></i> All Modules</button>
             <p id="out" class="mt-4 d-none"><?php echo "Listening server: <a href='http://".$IP[0].":5556' target='_blank'>http://".$IP[0].":5556/</a>";?></p>
         </div>
     </div>
