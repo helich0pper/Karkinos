@@ -1,0 +1,80 @@
+﻿<html>
+<head>
+    <title>Karkinos</title>
+    <meta name=”viewport” content=”width =device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body class="bg-dark text-white">
+    <!-- Header -->
+    <header>
+        <div class="row p-5">
+            <div class="col-md-5 col-sm-12 col-lg-5">
+                <div class="container-fluid pb-3">
+                    <h1 class="text-white">Port Scanner</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main -->
+    <main class="text-white">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-7 col-lg-7 ml-5">
+                    <!-- Shell -->
+                    <form onsubmit="return false">
+                        <div class="form-group">
+                            <p class="text-white">Output:</p>
+                            <textarea class="terminal" id="out" style="min-width: 100%; min-height:50%" readonly></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-outline-light btn-block" id="copy">Copy to clipboard</button>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-warning btn-block" id="clear">Clear</button>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-success btn-block" id="download">Download output</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- Connect -->
+                <div class="col-md-4 col-lg-4 col-sm-10 ml-5">
+                    <form onsubmit="return false">
+                        <p class="text-white">Scanner Configuration:</p>
+                        <div class="form-group">
+                            <label for="target" class="text-white">IP/Hostname:</label>
+                            <input type="text" id="target" name="target" class="terminal form-control" placeholder="eg. 192.168.0.111" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="port" class="text-white">Ports to scan</label>
+                            <input type="text" id="port" name="port" class="terminal form-control" placeholder="eg. 1-1000 or 80,8080,9001">
+                        </div>
+                        <div class="form-group">
+                            <label for="timeout" class="text-white">Max timeout in seconds (max 10, default 3)</label>
+                            <input type="text" id="timeout" name="timeout" class="terminal form-control" placeholder="eg. 5">
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="button" class="btn btn-outline-success btn-block py-5" id="start"><h1>Start</h1></button>
+                            <button type="button" class="btn btn-outline-warning btn-block py-2" id="shutdown"><b>Shutdown Server</b></button>
+                            <p id="startMsg" class="mt-4"></p>
+                            <br/>
+                            <p id="shutdownMsg" class="mt-4"></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-copyright text-white text-center py-3">
+            &copy; {{ now.year }} Copyright:
+            <a href="https://github.com/helich0pper">helich0pper</a>
+        </div>
+    </footer>
+    <script type="text/javascript" src={{url_for('static', filename='js/port.js')}}></script>
+</body>
+</html>

@@ -52,6 +52,7 @@
             <div class="mb-5">
                 <button type="submit" class="btn btn-outline-primary btn-block py-3" id="reverse">Reverse Shell Handling</button>
                 <button type="submit" class="btn btn-outline-primary btn-block py-3" id="busting">Directory and File Busting</button>
+                <button type="submit" class="btn btn-outline-primary btn-block py-3" id="port">Port Scanning</button>
                 <button type="submit" class="btn btn-outline-light btn-block py-3"><i class="fas fa-hourglass-half"></i> More soon...</button>
             </div>
         </div>

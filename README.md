@@ -22,12 +22,10 @@ Karkinos is a light-weight 'Swiss Army Knife' for penetration testing and/or hac
 * Raspberry Pi Zero friendly :) (crack hashes at your own risk)
 
 # Newest Feature
-## Introducing Modules
-#### Modules are now in one place for better organisation and accessibility.
-![Modules](https://github.com/helich0pper/Karkinos/blob/main/screenshots/modules/modules.png) <br>
 ## New Module
-#### Directory and File Busting demo:
-[![Directory and File Busting Demo](https://github.com/helich0pper/Karkinos/blob/main/screenshots/thumbnails/busting.png)](https://www.youtube.com/embed/cS9j9FXs6bE?modestbranding=1)
+### Port Scanning Demo
+More information can be found in the Modules section below.
+[![Port Scanning Demo](https://github.com/helich0pper/Karkinos/blob/main/screenshots/thumbnails/portscanning.png)](https://youtu.be/FybH4s_FyNA)
 
 
 # Installing
@@ -100,7 +98,15 @@ Reverse shells can be captured and interacted with on this page. <br>
 #### Full Directory and File Busting demo:
 [![Directory and File Busting Demo](https://github.com/helich0pper/Karkinos/blob/main/screenshots/thumbnails/busting.png)](https://www.youtube.com/embed/cS9j9FXs6bE?modestbranding=1)
 
-
+### Port Scanning
+#### Launch the scanner
+![Port Scanning 1](https://github.com/helich0pper/Karkinos/blob/main/screenshots/modules/portscanning/portscanning1.png) <br>
+#### Configure it
+![Port Scanning 2](https://github.com/helich0pper/Karkinos/blob/main/screenshots/modules/portscanning/portscanning2.png) <br>
+#### Start scanning
+![Port Scanning 3](https://github.com/helich0pper/Karkinos/blob/main/screenshots/modules/portscanning/portscanning3.png) <br>
+#### Full Directory and File Busting demo:
+[![Port Scanning Demo](https://github.com/helich0pper/Karkinos/blob/main/screenshots/thumbnails/portscanning.png)](https://youtu.be/FybH4s_FyNA)
 
 ## Generating Hashes
 Karkinos can generate commonly used hashes such as:

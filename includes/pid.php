@@ -22,5 +22,15 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         }
     }
 
+    if($_POST['method'] == "port"){
+        if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+            // Change "python" for Windows
+            $pid = exec("start python ../bin/PortScan/app.py & ");
+        } else {
+            // Change "python3" for Linux/BSD
+            $pid = exec("python3 ../bin/PortScan/app.py &");
+        }
+    }
+
     echo json_encode($pid);
 }
