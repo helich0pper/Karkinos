@@ -124,7 +124,7 @@ def start():
 
 @app.route('/', methods = ['POST', 'GET'])
 def index():    
-    return render_template('index.html')
+    return render_template('index.html', now=datetime.utcnow())
 
 @app.route('/shutdown', methods=['POST'])
 def shutdown():

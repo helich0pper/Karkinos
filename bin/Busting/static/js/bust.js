@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $("#shutdown").click(function(){
-        $('#shutdownMsg').html("Server shutdown! Close tab.");
+        $('#shutdownMsg').html("<span class='text-danger'>Server shutdown! Close tab.</span>");
         shutdown();
     });
 
@@ -29,7 +29,7 @@ $(document).ready(function(){
 
         $("#start").prop('disabled', true);
 
-        $('#startMsg').html("<span class='text-success'>Started.</span> Check console for real-time finds. You can wait for the scan to complete for a full report of finds.");
+        $('#startMsg').html("<span class='text-success'>Started.</span> Check console for real-time finds. You can wait for the scan to complete for a full report.");
         start(url, hide, ext, wordlist);
     });
 
@@ -58,6 +58,7 @@ function start(url, hide, ext, wordlist) {
         success: function (res) {
             $("#out").html(res)
             $("#start").removeAttr("disabled");
+            $('#startMsg').html("<span class='text-success'>Done.</span>");
         }
     });
 }
@@ -80,13 +81,9 @@ function download(textToWrite, fileNameToSaveAs) {
     downloadLink.download = fileNameToSaveAs;
     downloadLink.innerHTML = "Download File";
     if (window.webkitURL != null) {
-        // Chrome allows the link to be clicked
-        // without actually adding it to the DOM.
         downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
     }
     else {
-        // Firefox requires the link to be added to the DOM
-        // before it can be clicked.
         downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
         downloadLink.onclick = destroyClickedElement;
         downloadLink.style.display = "none";

