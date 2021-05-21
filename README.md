@@ -105,7 +105,7 @@ Reverse shells can be captured and interacted with on this page. <br>
 ![Port Scanning 2](https://github.com/helich0pper/Karkinos/blob/main/screenshots/modules/portscanning/portscanning2.png) <br>
 #### Start scanning
 ![Port Scanning 3](https://github.com/helich0pper/Karkinos/blob/main/screenshots/modules/portscanning/portscanning3.png) <br>
-#### Full Directory and File Busting demo:
+#### Full Port Scanning Demo:
 [![Port Scanning Demo](https://github.com/helich0pper/Karkinos/blob/main/screenshots/thumbnails/portscanning.png)](https://youtu.be/FybH4s_FyNA)
 
 ## Generating Hashes
