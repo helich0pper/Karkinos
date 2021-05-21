@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     if($_POST['method'] == "busting"){
         if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
             // Change "python" for Windows
-            $pid = exec("start python ../bin/Busting/app.py & ");
+            $pid = exec("cd ../bin/Busting/ && start python app.py & ");
         } else {
             // Change "python3" for Linux/BSD
             $pid = exec("python3 ../bin/Busting/app.py &");

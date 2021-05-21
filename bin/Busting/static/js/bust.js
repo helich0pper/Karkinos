@@ -21,6 +21,7 @@ $(document).ready(function(){
         const ext = $("#ext").val();
         const hide = $("#hide").val();
         const wordlist = $("#wordlist").val();
+        const maxThreads = $("#maxThreads").val();
 
         if (url == "") {
             $('#startMsg').html("<span class='text-danger'>URL is required.</span>");
@@ -30,7 +31,7 @@ $(document).ready(function(){
         $("#start").prop('disabled', true);
 
         $('#startMsg').html("<span class='text-success'>Started.</span> Check console for real-time finds. You can wait for the scan to complete for a full report.");
-        start(url, hide, ext, wordlist);
+        start(url, hide, ext, wordlist, maxThreads);
     });
 
 });
@@ -41,11 +42,12 @@ function shutdown(){
         type: "POST",
         dataType: "json",
         success: function(res){
+            return true;
         }
     });
 }
 
-function start(url, hide, ext, wordlist) {
+function start(url, hide, ext, wordlist, maxThreads) {
     jQuery.ajax({
         url: "/start",
         type: "POST",
@@ -54,6 +56,7 @@ function start(url, hide, ext, wordlist) {
             hide: hide,
             ext: ext,
             wordlist: wordlist,
+            maxThreads: maxThreads
         },
         success: function (res) {
             $("#out").html(res)

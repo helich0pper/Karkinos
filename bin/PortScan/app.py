@@ -22,12 +22,12 @@ def shutdown_server():
 def sendRequest(s, target, port):
     result = s.connect_ex((target,port))
     if result == 0:
-        print("Port %d is open" %port)
+        print("Port %d is open - %s" %(port, datetime.now().strftime("%H:%M:%S")))
         openPorts.put(port)
     s.close()
 
-def reportHead(target, ports, openPorts):
-    out = "Target: %s\nPort(s) chosen: %s\n" %(target, ports)
+def reportHead(target, ports, openPorts, maxThreads):
+    out = "Target: %s\nPort(s) chosen: %s\nThreads: %s\n" %(target, ports, maxThreads)
     out += "Open ports found:\n\n"
     
     while not openPorts.empty():
@@ -46,7 +46,7 @@ def getPorts(ports):
         if start < 1: start = 1
         if end > 65535: end = 65535
 
-        for i in range(start, end):
+        for i in range(start, end+1):
             ret.append(i)
 
     elif("," in ports):
@@ -60,13 +60,18 @@ def getPorts(ports):
 @app.route('/start', methods = ['POST', 'GET'])
 def start():
     out = ""
-    threads = list()
        
     if request.method == "POST":
         try:
             timeout = int(request.form['timeout'])
         except:
             timeout = 3
+        try:
+            maxThreads = int(request.form['maxThreads'])
+            if maxThreads > 300: maxThreads = 300
+            if maxThreads <= 0: maxThreads = 1
+        except:
+            maxThreads = 50
 
         try:
             target = socket.gethostbyname(request.form['target'])
@@ -79,25 +84,32 @@ def start():
 
     try:
         threads = list()
+        portCount = portRange[-1]
         for port in portRange:
+            print("Progress: %d/%d" %(int(port), portCount), end="\r")
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             socket.setdefaulttimeout(timeout)
             th = threading.Thread(target=sendRequest, args=(s, target, int(port)))
             threads.append(th)
             th.start()
+            if len(threads) > maxThreads:
+                for thread in threads:
+                    thread.join(1)
+                threads = list()
         
-        for i, thread in enumerate(threads):
-            thread.join()
-        out = reportHead(target, request.form['port'], openPorts)    
-        print("[*] Done!")
+        try:
+            for thread in threads:
+                thread.join(1)
+        except:
+            pass
+
+        out = reportHead(target, request.form['port'], openPorts, maxThreads)    
+        print("\n[*] Done!")
         print("[*] Check Karkinos for full report\n")
 
     except socket.error:
         print("[-] Socket error\n")
         out += "Socket error.\n"
-    except:
-        print("[-] Invalid configuration\n")
-        out += "Check your configuration and try again\n"
 
     return out
 

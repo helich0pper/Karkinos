@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 
-import os
 import queue
 import logging
 import requests
@@ -15,7 +14,6 @@ log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
 
 q = queue.Queue()
-threads = list()
 
 def shutdown_server():
     func = request.environ.get('werkzeug.server.shutdown')
@@ -34,7 +32,7 @@ def sendRequest(url, word, hideCode):
     try:
         res = str(requests.get(url + "/" + word).status_code)
         if res not in hideCode and res != 0:
-            ret = str(res) + "   -   " + word 
+            ret = str(res) + "   -   " + word + " - " + str(datetime.now().strftime("%H:%M:%S"))
         else:
             ret = 0
     except:
@@ -54,50 +52,65 @@ def reportHead(url, hideCode):
 
 @app.route('/start', methods = ['POST', 'GET'])
 def start():
-    global threads
-       
+    threads = list()
+    
     if request.method == "POST":
-       url = request.form['url']
-       ext = request.form['ext']
-       hideCode = request.form['hide']
-       wordlist = request.form['wordlist']
-       whitelist = ["common", "medium-lowercase", "small-lowercase", "medium", "small", ]
+        url = request.form['url']
+        ext = request.form['ext']
+        hideCode = request.form['hide']
+        wordlist = request.form['wordlist']
+        whitelist = ["common", "medium-lowercase", "small-lowercase", "medium", "small", ]
 
-       if(url[-1] == "/"):
-           url = url [:-1]
+    try:
+            maxThreads = int(request.form['maxThreads'])
+            if maxThreads > 300: maxThreads = 300
+            if maxThreads <= 0: maxThreads = 1
+    except:
+        maxThreads = 50
 
-       try:
-           hideCode = hideCode.split(",")
-       except ValueError:
-           hideCode = ""
-       try:
-           ext = ext.split(",")
-       except ValueError:
-           ext = ""
+    if(url[-1] == "/"):
+        url = url [:-1]
+
+    try:
+        hideCode = hideCode.split(",")
+    except ValueError:
+        hideCode = ""
+    try:
+        ext = ext.split(",")
+    except ValueError:
+        ext = ""
 
     out = reportHead(url, hideCode)
 
     #wordlist = "fuzz.txt" # Use to debug (smaller)
     if wordlist in whitelist:
-        wordlist = "../wordlists/busting/" + wordlist + ".txt"
-        os.system("cd")
+        wordlist = "../../wordlists/busting/" + wordlist + ".txt"
     else:
         return "Invalid wordlist."
 
     with open(wordlist) as wordlist:
         print("[*] Starting " + url)
         print("[*] Real-time finds are displayed below:\n")
+        
+        count = 0
         for word in wordlist:
             word = word[:-1]
+            count += 1
+            print("Request number: %d" %count, end="\r")
 
             th = threading.Thread(target=sendRequest, args=(url, word, hideCode))
             threads.append(th)
+            th.daemon = True
             th.start()
+            if len(threads) > maxThreads:
+                for thread in threads:
+                    thread.join(1)
+                threads = list()
+
 
             res = q.get()
             if res != 0:
-                current_time = datetime.now().strftime("  -  %H:%M:%S\n")
-                out += res + current_time
+                out += res + "\n"
                 print(res)
 
             if ext[0] != "":
@@ -110,16 +123,21 @@ def start():
 
                     res = q.get()
                     if res != 0:
-                        current_time = datetime.now().strftime("  -  %H:%M:%S\n")
-                        out += res + current_time
+                        out += res + "\n"
                         print(res)
 
-    for i, thread in enumerate(threads):
-        thread.join()
+    print("[*] Wating for threads...")
+    try:
+        for thread in threads:
+            thread.join()
+    except:
+        pass
+    
+    print("\n[*] Done!")
+    print("[*] Total requests sent: %d" %count)
+    print("[*] Check Karkinos for full report\n")
+    out += "\nTotal requests sent: %d" %count
 
-    print("[*] Done!")
-    print("[*] Check Karkinos for full report")
-   
     return out
 
 @app.route('/', methods = ['POST', 'GET'])

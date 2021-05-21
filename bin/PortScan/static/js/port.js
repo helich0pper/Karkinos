@@ -20,6 +20,7 @@ $(document).ready(function(){
         const target = $("#target").val();
         const port = $("#port").val();
         const timeout = $("#timeout").val();
+        const maxThreads = $("#maxThreads").val();
 
         if (target == "") {
             $('#startMsg').html("<span class='text-danger'>Target is required.</span>");
@@ -32,8 +33,8 @@ $(document).ready(function(){
         }
 
         $("#start").prop('disabled', true);
-        $('#startMsg').html("<span class='text-success'>Started.</span> Check console for real-time finds. You can wait for the scan to complete for a full report.");
-        start(target, port, timeout);
+        $('#startMsg').html("<span class='text-success'>Started.</span> Check console for progress and real-time finds. You can wait for the scan to complete for a full report.");
+        start(target, port, timeout, maxThreads);
     });
 
 });
@@ -48,14 +49,15 @@ function shutdown(){
     });
 }
 
-function start(target, port, timeout) {
+function start(target, port, timeout, maxThreads) {
     jQuery.ajax({
         url: "/start",
         type: "POST",
         data: {
             target: target,
             port: port,
-            timeout: timeout
+            timeout: timeout,
+            maxThreads: maxThreads
         },
         success: function (res) {
             $("#out").val(res)
