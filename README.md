@@ -24,7 +24,7 @@ Karkinos is a light-weight 'Swiss Army Knife' for penetration testing and/or hac
 # Newest Feature
 ## New Module
 ### Port Scanning Demo
-More information can be found in the Modules section below.
+More information can be found in the Modules section. <br> <br>
 [![Port Scanning Demo](https://github.com/helich0pper/Karkinos/blob/main/screenshots/thumbnails/portscanning.png)](https://youtu.be/FybH4s_FyNA)
 
 
