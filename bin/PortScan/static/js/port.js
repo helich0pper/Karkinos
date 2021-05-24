@@ -16,6 +16,18 @@ $(document).ready(function(){
         download($("#out").val(), "Report.txt")
     });
 
+    $("#maxPortButton").click(function (e) {
+        $("#port").val("1-65535");
+    });
+
+    $("#maxThreadButton").click(function (e) {
+        $("#maxThreads").val("300");
+    });
+
+    $("#maxTimeoutButton").click(function (e) {
+        $("#timeout").val("10");
+    });
+
     $("#start").click(function () {
         const target = $("#target").val();
         const port = $("#port").val();

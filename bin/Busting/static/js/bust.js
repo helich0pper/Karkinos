@@ -16,6 +16,10 @@ $(document).ready(function(){
         download($("#out").val(), "Report.txt")
     });
 
+    $("#maxThreadButton").click(function () {
+        $("#maxThreads").val("300");
+    });
+
     $("#start").click(function () {
         const url = $("#url").val();
         const ext = $("#ext").val();

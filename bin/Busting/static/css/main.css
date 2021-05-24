@@ -22,5 +22,9 @@ a {
 }
 
 a:hover {
-    color: orange;
+    color: #ff8c00;
+}
+
+.max{
+    color: #ff8c00;
 }

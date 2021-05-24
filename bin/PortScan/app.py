@@ -22,7 +22,7 @@ def shutdown_server():
 def sendRequest(s, target, port):
     result = s.connect_ex((target,port))
     if result == 0:
-        print("Port %d is open - %s" %(port, datetime.now().strftime("%H:%M:%S")))
+        print("Port %d - %s" %(port, datetime.now().strftime("%H:%M:%S")))
         openPorts.put(port)
     s.close()
 
@@ -31,7 +31,7 @@ def reportHead(target, ports, openPorts, maxThreads):
     out += "Open ports found:\n\n"
     
     while not openPorts.empty():
-        out += "Port %d is open\n" %openPorts.get()
+        out += "Port %d - %s\n" %(openPorts.get(), datetime.now().strftime("%H:%M:%S"))
 
     return out
 
@@ -86,7 +86,7 @@ def start():
         threads = list()
         portCount = portRange[-1]
         for port in portRange:
-            print("Progress: %d/%d" %(int(port), portCount), end="\r")
+            print("Progress: %d/%d" %(int(port), int(portCount)), end="\r")
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             socket.setdefaulttimeout(timeout)
             th = threading.Thread(target=sendRequest, args=(s, target, int(port)))

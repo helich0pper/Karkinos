@@ -44,19 +44,19 @@
                     <form onsubmit="return false">
                         <p class="text-white">Scanner Configuration:</p>
                         <div class="form-group">
-                            <label for="target" class="text-white">IP/Hostname:</label>
+                            <label for="target" class="text-white">IP/Hostname</label>
                             <input type="text" id="target" name="target" class="terminal form-control" placeholder="eg. 192.168.0.111" required>
                         </div>
                         <div class="form-group">
-                            <label for="port" class="text-white">Ports to scan</label>
+                            <label for="port" class="text-white">Ports to scan <span id="maxPortButton" class="max"><u>Max</u></span></label>
                             <input type="text" id="port" name="port" class="terminal form-control" placeholder="eg. 1-1000 or 80,8080,9001">
                         </div>
                         <div class="form-group">
-                            <label for="maxThreads" class="text-white">Threads (max 300, default 50):</label>
+                            <label for="maxThreads" class="text-white">Threads (default 50) <span id="maxThreadButton" class="max"><u>Max</u></span></label>
                             <input type="text" id="maxThreads" name="maxThreads" class="terminal form-control" placeholder="eg. 50">
                         </div>
                         <div class="form-group">
-                            <label for="timeout" class="text-white">Max timeout in seconds (max 10, default 3)</label>
+                            <label for="timeout" class="text-white">Max timeout in seconds (default 3) <span id="maxTimeoutButton" class="max"><u>Max</u></span></label>
                             <input type="text" id="timeout" name="timeout" class="terminal form-control" placeholder="eg. 5">
                         </div>
                         
