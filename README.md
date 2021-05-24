@@ -1,6 +1,5 @@
 # Disclaimer 
 Use this tool to make penetration tests or any hacking CTF's more efficient. This tool should be used on applications that you have permission to attack **only**. Any misuse or damage caused will be solely the users’ responsibility. <br>
-A Wiki page for installation, troubleshooting, and usage is coming very soon...
 
 # What is Karkinos?
 Karkinos is a light-weight 'Swiss Army Knife' for penetration testing and/or hacking CTF's. Currently, Karkinos offers the following:
@@ -28,7 +27,7 @@ More information can be found in the Modules section. <br> <br>
 
 
 # Installing
-This installation guide assumes you have all the dependencies.
+This installation guide assumes you have all the dependencies. A Wiki page for installation, troubleshooting, and usage is coming very soon...
 ## Linux/BSD
 1. ```git clone https://github.com/helich0pper/Karkinos.git```
 2. ```cd Karkinos```
