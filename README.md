@@ -34,10 +34,11 @@ This installation guide assumes you have all the dependencies. A Wiki page for i
 3. ```pip3 install -r requirements.txt```
 4. ```cd wordlists && unzip passlist.zip```
 You can also unzip it manually using file explorer. Just make sure passlist.txt is in **wordlists** directory.
-5. Enable ```extension=mysqli``` in your php.ini file. <br>
+5. ```Make sure you have write privilages for db/main.db```
+6. Enable ```extension=mysqli``` in your php.ini file. <br>
 If you don't know where to find this, refer to the PHP [docs](https://www.php.net/manual/en/configuration.file.php#:~:text=d%20php%20PHP%20will%20load,ini%20as%20configuration%20files.).
-Note: MySQLi is only used to store statistics
-6. Thats it! Now just host it using your preferred web server or run: ```php -S 127.0.0.1:8888``` in the Karkinos directory. <br> <br>
+Note: MySQLi is only used to store statistics.
+7. Thats it! Now just host it using your preferred web server or run: ```php -S 127.0.0.1:8888``` in the Karkinos directory. <br> <br>
 **Important: using port 5555, 5556, or 5557 will conflict with the Modules** <br>
 If you insist on using these ports, change the ```PORT``` value in: 
 - ```/bin/Server/app.py Line 88```
@@ -49,10 +50,11 @@ If you insist on using these ports, change the ```PORT``` value in:
 3. ```pip3 install -r requirements.txt```
 4. ```cd wordlists && unzip passlist.zip``` <br>
 You can also unzip it manually using file explorer. Just make sure passlist.txt is in **wordlists** directory.
-5. Enable ```extension=mysqli.dll``` in your php.ini file. <br>
+5. ```Make sure you have write privilages for db/main.db```
+6. Enable ```extension=mysqli.dll``` in your php.ini file. <br>
 If you don't know where to find this, refer to the PHP [docs](https://www.php.net/manual/en/configuration.file.php#:~:text=d%20php%20PHP%20will%20load,ini%20as%20configuration%20files.).
 Note: MySQLi is only used to store statistics
-6. Thats it! Now just host it using your preferred web server or run: ```php -S 127.0.0.1:8888``` in the Karkinos directory. <br> <br>
+7. Thats it! Now just host it using your preferred web server or run: ```php -S 127.0.0.1:8888``` in the Karkinos directory. <br> <br>
 **Important: using port 5555, 5556, or 5557 will conflict with the Modules** <br>
 If you insist on using these ports, change the ```PORT``` value in: 
 - ```/bin/Server/app.py Line 88```
