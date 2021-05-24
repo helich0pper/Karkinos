@@ -14,6 +14,7 @@ $(document).ready(function(){
 });
 
 function start(){
+    $("#go").prop('disabled', true);
     jQuery.ajax({
         url: "../../includes/pid.php",
         type: "POST",
@@ -25,6 +26,7 @@ function start(){
 }
 
 function shutdown(){
+    $("#go").removeAttr("disabled");
     jQuery.ajax({
         url: "http://"+IP+":5556/shutdown",
         type: "POST",
