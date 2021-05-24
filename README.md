@@ -24,7 +24,7 @@ Karkinos is a light-weight 'Swiss Army Knife' for penetration testing and/or hac
 # Newest Feature
 ## New Module
 ### Port Scanning Demo
-More information can be found in the Modules section below.
+More information can be found in the Modules section. <br> <br>
 [![Port Scanning Demo](https://github.com/helich0pper/Karkinos/blob/main/screenshots/thumbnails/portscanning.png)](https://youtu.be/FybH4s_FyNA)
 
 
@@ -38,11 +38,12 @@ This installation guide assumes you have all the dependencies.
 You can also unzip it manually using file explorer if tar is not installed. Just make sure passlist.txt is in **wordlists** directory.
 5. Add ```extension=php_sqlite3.dll``` to your php.ini file. <br>
 If you don't know where to find this, refer to the PHP [docs](https://www.php.net/manual/en/configuration.file.php#:~:text=d%20php%20PHP%20will%20load,ini%20as%20configuration%20files.).
-6. Thats it! Now just host it using your preferred web server or run: ```php -S 127.0.0.1:8888``` in the Karkinos directory. <br>
-**Important: using port 5555 will conflict with the reverse shell handler server** <br>
-If you insist on using port 5555, change the reverse shell handler server ```PORT``` value in ```/bin/Server/app.py Line 88``` <br>
-**Important: using port 5556 will conflict with the directory and file busting server** <br>
-If you insist on using port 5556, change the directory and file busting server ```PORT``` value in ```/bin/Busting/app.py Line 111```
+6. Thats it! Now just host it using your preferred web server or run: ```php -S 127.0.0.1:8888``` in the Karkinos directory. <br> <br>
+**Important: using port 5555, 5556, or 5557 will conflict with the Modules** <br>
+If you insist on using these ports, change the ```PORT``` value in: 
+- ```/bin/Server/app.py Line 88```
+- ```/bin/Busting/app.py Line 111```
+- ```/bin/PortScan/app.py Line 128```
 ## Windows
 1. ```git clone https://github.com/helich0pper/Karkinos.git```
 2. ```cd Karkinos```
@@ -51,11 +52,12 @@ If you insist on using port 5556, change the directory and file busting server `
 You can also unzip it manually using file explorer if tar is not installed. Just make sure passlist.txt is in **wordlists** directory.
 5. Add ```extension=php_sqlite3.dll``` to your php.ini file. <br>
 If you don't know where to find this, refer to the PHP [docs](https://www.php.net/manual/en/configuration.file.php#:~:text=d%20php%20PHP%20will%20load,ini%20as%20configuration%20files.).
-6. Thats it! Now just host it using your preferred web server or run: ```php -S 127.0.0.1:8888``` in the Karkinos directory. <br>
-**Important: using port 5555 will conflict with the reverse shell handler server** <br>
-If you insist on using port 5555, change the reverse shell handler server ```PORT``` value in ```/bin/Server/app.py Line 88``` <br>
-**Important: using port 5556 will conflict with the directory and file busting server** <br>
-If you insist on using port 5556, change the directory and file busting server ```PORT``` value in ```/bin/Busting/app.py Line 111```
+6. Thats it! Now just host it using your preferred web server or run: ```php -S 127.0.0.1:8888``` in the Karkinos directory. <br> <br>
+**Important: using port 5555, 5556, or 5557 will conflict with the Modules** <br>
+If you insist on using these ports, change the ```PORT``` value in: 
+- ```/bin/Server/app.py Line 88```
+- ```/bin/Busting/app.py Line 111```
+- ```/bin/PortScan/app.py Line 128```
 # Demo
 **Open screenshots in full screen for a better view**
 ## Home Menu
