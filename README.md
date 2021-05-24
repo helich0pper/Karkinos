@@ -1,7 +1,5 @@
 # Disclaimer 
 Use this tool to make penetration tests or any hacking CTF's more efficient. This tool should be used on applications that you have permission to attack **only**. Any misuse or damage caused will be solely the users’ responsibility. <br>
-**Please check the known bugs and issues at the bottom before installation.** <br>
-A Wiki page for troubleshooting is coming very soon...
 
 # What is Karkinos?
 Karkinos is a light-weight 'Swiss Army Knife' for penetration testing and/or hacking CTF's. Currently, Karkinos offers the following:
@@ -29,15 +27,16 @@ More information can be found in the Modules section. <br> <br>
 
 
 # Installing
-This installation guide assumes you have all the dependencies.
+This installation guide assumes you have all the dependencies. A Wiki page for installation, troubleshooting, and usage is coming very soon...
 ## Linux/BSD
 1. ```git clone https://github.com/helich0pper/Karkinos.git```
 2. ```cd Karkinos```
 3. ```pip3 install -r requirements.txt```
-4. ```cd wordlists && tar -xf passlist.zip```
-You can also unzip it manually using file explorer if tar is not installed. Just make sure passlist.txt is in **wordlists** directory.
-5. Add ```extension=php_sqlite3.dll``` to your php.ini file. <br>
+4. ```cd wordlists && unzip passlist.zip```
+You can also unzip it manually using file explorer. Just make sure passlist.txt is in **wordlists** directory.
+5. Enable ```extension=mysqli``` in your php.ini file. <br>
 If you don't know where to find this, refer to the PHP [docs](https://www.php.net/manual/en/configuration.file.php#:~:text=d%20php%20PHP%20will%20load,ini%20as%20configuration%20files.).
+Note: MySQLi is only used to store statistics
 6. Thats it! Now just host it using your preferred web server or run: ```php -S 127.0.0.1:8888``` in the Karkinos directory. <br> <br>
 **Important: using port 5555, 5556, or 5557 will conflict with the Modules** <br>
 If you insist on using these ports, change the ```PORT``` value in: 
@@ -48,10 +47,11 @@ If you insist on using these ports, change the ```PORT``` value in:
 1. ```git clone https://github.com/helich0pper/Karkinos.git```
 2. ```cd Karkinos```
 3. ```pip3 install -r requirements.txt```
-4. ```cd wordlists && tar -xf passlist.zip``` <br>
-You can also unzip it manually using file explorer if tar is not installed. Just make sure passlist.txt is in **wordlists** directory.
-5. Add ```extension=php_sqlite3.dll``` to your php.ini file. <br>
+4. ```cd wordlists && unzip passlist.zip``` <br>
+You can also unzip it manually using file explorer. Just make sure passlist.txt is in **wordlists** directory.
+5. Enable ```extension=mysqli.dll``` in your php.ini file. <br>
 If you don't know where to find this, refer to the PHP [docs](https://www.php.net/manual/en/configuration.file.php#:~:text=d%20php%20PHP%20will%20load,ini%20as%20configuration%20files.).
+Note: MySQLi is only used to store statistics
 6. Thats it! Now just host it using your preferred web server or run: ```php -S 127.0.0.1:8888``` in the Karkinos directory. <br> <br>
 **Important: using port 5555, 5556, or 5557 will conflict with the Modules** <br>
 If you insist on using these ports, change the ```PORT``` value in: 
