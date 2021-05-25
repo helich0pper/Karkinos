@@ -41,8 +41,8 @@ Note: MySQLi is only used to store statistics.
 7. Thats it! Now just host it using your preferred web server or run: ```php -S 127.0.0.1:8888``` in the Karkinos directory. <br> <br>
 **Important: using port 5555, 5556, or 5557 will conflict with the Modules** <br>
 If you insist on using these ports, change the ```PORT``` value in: 
-- ```/bin/Server/app.py Line 88```
-- ```/bin/Busting/app.py Line 111```
+- ```/bin/Server/app.py Line 87```
+- ```/bin/Busting/app.py Line 155```
 - ```/bin/PortScan/app.py Line 128```
 ## Windows
 1. ```git clone https://github.com/helich0pper/Karkinos.git```
@@ -57,8 +57,8 @@ Note: MySQLi is only used to store statistics
 7. Thats it! Now just host it using your preferred web server or run: ```php -S 127.0.0.1:8888``` in the Karkinos directory. <br> <br>
 **Important: using port 5555, 5556, or 5557 will conflict with the Modules** <br>
 If you insist on using these ports, change the ```PORT``` value in: 
-- ```/bin/Server/app.py Line 88```
-- ```/bin/Busting/app.py Line 111```
+- ```/bin/Server/app.py Line 87```
+- ```/bin/Busting/app.py Line 155```
 - ```/bin/PortScan/app.py Line 128```
 # Demo
 **Open screenshots in full screen for a better view**
