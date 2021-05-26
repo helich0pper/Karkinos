@@ -9,10 +9,10 @@ Karkinos is a light-weight 'Swiss Army Knife' for penetration testing and/or hac
 * Cracking and generating hashes
 
 # Dependencies 
-* Any server capable of hosting PHP; tested with Apache Server 
+* Any server capable of hosting PHP 
 * Tested with PHP 7.4.9
-* Python3<br>
-  Make sure it is in your path as:<br>
+* Tested with Python 3.8 <br>
+  Make sure it is in your path as: <br>
     Windows: ```python```<br>
     Linux: ```python3```<br>
     If it is not, please change the commands in ```includes/pid.php```
