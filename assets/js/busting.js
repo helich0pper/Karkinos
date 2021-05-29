@@ -26,10 +26,14 @@ function start(){
 }
 
 function shutdown(){
-    $("#go").removeAttr("disabled");
+    $("#shutdownMsg").html("Cleaning up...");
     jQuery.ajax({
         url: "http://"+IP+":5556/shutdown",
         type: "POST",
         dataType: "json",
     });
+    window.setTimeout(function(){
+        $("#go").removeAttr("disabled");
+        $("#shutdownMsg").html("");
+    }, 2500);
 }
