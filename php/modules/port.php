@@ -14,7 +14,7 @@
 <?php
     $IP = explode(":", $_SERVER['HTTP_HOST']);
 ?>
-<script>const IP = <?= "\"".$IP[0]."\"" ?> </script>
+<script>const IP = <?= "\"".htmlspecialchars($IP[0])."\"" ?> </script>
 
 
 <!-- NavBar -->
@@ -60,7 +60,8 @@
             <button type="submit" class="btn btn-outline-danger btn-block py-5" id="go">Start Scanner</button>
             <button type="button" class="btn btn-outline-warning btn-block" id="shutdown"><i class="fas fa-power-off"></i> Shutdown Server</button>
             <button type="button" class="btn btn-outline-primary btn-block" id="back"><i class="fas fa-arrow-left"></i> All Modules</button>
-            <p id="out" class="mt-4 d-none"><?php echo "Listening server: <a href='http://".$IP[0].":5557' target='_blank'>http://".$IP[0].":5557/</a>";?></p>
+            <p id="shutdownMsg"></p>
+            <p id="out" class="mt-4 d-none"><?php echo "Listening server: <a href='http://".htmlspecialchars($IP[0]).":5557' target='_blank'>http://".htmlspecialchars($IP[0]).":5557/</a>";?></p>
         </div>
     </div>
     </main>

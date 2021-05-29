@@ -11,12 +11,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
-<?php
-    $IP = explode(":", $_SERVER['HTTP_HOST']);
-?>
-<script>const IP = <?= "\"".$IP[0]."\"" ?> </script>
-
-
 <!-- NavBar -->
 <nav class="navbar navbar-light navbar-expand-md navbar navbar-expand-lg" id="mainNav">
     <div class="container"><button data-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"
