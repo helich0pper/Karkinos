@@ -11,7 +11,7 @@ function encode($type, $input){
             $ret = urlencode($input);
         break;
         case "hex":
-            $ret = dechex($input);
+            $ret = wordwrap(bin2hex($input), 2, " ", true);
         break;
         case "rot13":
             $ret = str_rot13($input);
@@ -31,7 +31,8 @@ function decode($type, $input){
             $ret = urldecode($input);
         break;
         case "hex":
-            $ret = hexdec($input);
+            $input = str_replace(" ", "", $input);
+            $ret = hex2bin($input);
         break;
         case "rot13":
             $ret = str_rot13($input);

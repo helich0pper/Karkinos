@@ -83,6 +83,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             }
             array_push($out, htmlspecialchars($input), htmlspecialchars($method), htmlspecialchars($password));
             if($password !== "Password not found."){
+                set_error_handler(function() { /* Ignore errors. Allows for cracking without SQLite installed. */ });
                 $db = new SQLite3('../db/main.db');
                 $db->query('UPDATE hashes SET '.$method.' = '.$method.'+1');
                 $db->close();

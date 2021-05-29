@@ -12,19 +12,21 @@ $(document).ready(function(){
     })
 
     $("#crack").click(function(){
+        $("#crack").prop('disabled', true);
         let hashes = $("#crackHashes").val().split(",");
         const merge = $("#merge").prop("checked");
         if(merge){
             hashes = cleanDuplicates(hashes);
         }
         totalHashes = hashes.length;
-        $("#loading").html("Cracking...");
+        $("#loading").html("Cracking... " + totalHashes + " left");
         for(hash in hashes){
             post(hashes[hash].toLowerCase(), totalHashes);
         }
     });
     
     $("#hash").click(function(){
+        $("#hash").prop('disabled', true);
         let hashes = $("#hashHashes").val().split(" ");
         hashes = cleanDuplicates(hashes)
         let hashMethod = $('input[name="hashMethod"]:checked').val();
@@ -45,8 +47,10 @@ function post(hash){
         dataType: "json",
         success: function(res){
             totalHashes--;
+            $("#loading").html("Cracking... " + totalHashes + " left");
             if(totalHashes === 0){
                 $("#loading").html("");
+                $("#crack").removeAttr("disabled");
             }
             $('#out > tbody:last-child').append("<tr>");
             for(i in res){

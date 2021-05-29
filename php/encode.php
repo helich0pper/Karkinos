@@ -48,7 +48,7 @@
 
     <!-- Main -->
     <main>
-        <?php 
+        <?php
             $types = array("Base64", "URI", "Hex", "ROT13");
             foreach($types as $i){
                 $id = strtolower($i);
@@ -64,7 +64,7 @@
                     <button type="button" class="btn btn-outline-success btn-block" onclick="encodeDisplay(this)">Encode</button>
                     <button type="button" class="btn btn-outline-danger btn-block" onclick="decodeDisplay(this)">Decode</button><br>
                     <a href="#" class="btn btn-outline-primary btn-block">Top</a>
-                </div>  
+                </div>
             <!-- Column Encode -->
                 <div class="col-md-4 col-sm-11 col-lg-4 flex-d"  id="<?= $encodeId ?>">
                     <div class="container-fluid d-flex flex-column">
@@ -73,7 +73,7 @@
                             <label for="encode-value" class="font-weight-bold">
                                     Value to <span class="text-success">encode</span>:
                                 </label>
-                                <textarea class="form-control terminal pb-6" placeholder="Enter value" id="<?= $inputId."-encode" ?>" required></textarea>
+                                <textarea class="form-control terminal" placeholder="Enter value" id="<?= $inputId."-encode" ?>" rows="10" required></textarea>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success px-5">GO</button>
@@ -90,7 +90,7 @@
                                 <label for="encode-value" class="font-weight-bold">
                                     Value to <span class="text-danger">decode</span>:
                                 </label>
-                                <textarea class="form-control terminal pb-6" placeholder="Enter value" id="<?= $inputId."-decode" ?>" required></textarea>
+                                <textarea class="form-control terminal" placeholder="Enter value" id="<?= $inputId."-decode" ?>" rows="10" required></textarea>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-danger px-5">GO</button>
@@ -98,21 +98,21 @@
                             </div>
                         </form>
                     </div>
-                </div>  
+                </div>
                 <!-- Column Output -->
                 <div class="col-md-4 col-sm-11 col-lg-4 flex-d">
                         <div class="container-fluid d-flex flex-column">
                             <form onsubmit="copy(this);return false;">
                                 <div class="form-group">
                                     <label for="encode-value" class="font-weight-bold">Output</label>
-                                    <textarea class="form-control terminal pb-6" placeholder="Output will display here" id="<?= $outputId ?>"></textarea>
+                                    <textarea class="form-control terminal" placeholder="Output will display here" id="<?= $outputId ?>" rows="10"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-outline-light btn-block">Copy to Clipboard</button>
                                 </div>
                             </form>
                         </div>
-                    </div>  
+                    </div>
         </div>
             <?php }?>
     <!-- Footer -->

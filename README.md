@@ -1,5 +1,5 @@
 # Disclaimer 
-Use this tool to make penetration tests or any hacking CTF's more efficient. This tool should be used on applications that you have permission to attack **only**. Any misuse or damage caused will be solely the users’ responsibility. <br>
+Use this tool to make penetration tests or any hacking CTF's more beginner-friendly. This tool should be used on applications/networks that you have permission to attack only. Any misuse or damage caused will be solely the users’ responsibility. <br>
 
 # What is Karkinos?
 Karkinos is a light-weight 'Swiss Army Knife' for penetration testing and/or hacking CTF's. Currently, Karkinos offers the following:
@@ -15,8 +15,8 @@ Karkinos is a light-weight 'Swiss Army Knife' for penetration testing and/or hac
   Make sure it is in your path as: <br>
     Windows: ```python```<br>
     Linux: ```python3```<br>
-    If it is not, please change the commands in ```includes/pid.php```
-* pip3
+    If it is not, please change the commands in ```includes/pid.php```.
+* Pip3
 * Raspberry Pi Zero friendly :) (crack hashes at your own risk)
 
 # Newest Feature
@@ -27,7 +27,7 @@ More information can be found in the Modules section. <br> <br>
 
 
 # Installing
-This installation guide assumes you have all the dependencies. A Wiki page for installation, troubleshooting, and usage is coming very soon...
+This installation guide assumes you have all the dependencies. A Wiki page with troubleshooting steps can be found <a href="https://helich0pper.github.io/karkinos/" target="_blank">here</a>.
 ## Linux/BSD
 1. ```git clone https://github.com/helich0pper/Karkinos.git```
 2. ```cd Karkinos```

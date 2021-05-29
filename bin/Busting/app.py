@@ -60,7 +60,6 @@ def start():
         hideCode = request.form['hide']
         wordlist = request.form['wordlist']
         whitelist = ["common", "medium-lowercase", "small-lowercase", "medium", "small", ]
-
     try:
             maxThreads = int(request.form['maxThreads'])
             if maxThreads > 300: maxThreads = 300

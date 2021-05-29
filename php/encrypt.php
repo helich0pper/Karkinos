@@ -60,7 +60,7 @@
                         <div class="form-group">
                             <div class="form-group">
                                 <label for="data" class="font-weight-bold">Text to <span class="text-success">Encrypt</span></label>
-                                <textarea class="form-control terminal pb-7" name="encryptData" id="encryptData" placeholder="Enter plain text"></textarea>
+                                <textarea class="form-control terminal" name="encryptData" id="encryptData" placeholder="Enter plain text" rows="10"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="mode" class="font-weight-bold">Mode</label>
@@ -94,7 +94,7 @@
                         <div class="form-group">
                             <div class="form-group">
                                 <label for="data" class="font-weight-bold">Text to <span class="text-danger">Decrypt</span></label>
-                                <textarea class="form-control terminal pb-7" name="decryptData" id="decryptData" placeholder="Enter plain text"></textarea>
+                                <textarea class="form-control terminal" name="decryptData" id="decryptData" placeholder="Enter plain text" rows="10"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="mode" class="font-weight-bold">Mode</label>
@@ -129,7 +129,7 @@
                     <form class="text-white">
                         <div class="form-group">
                             <label for="out" class="font-weight-bold">Output</label>
-                            <textarea class="form-control terminal pb-7" name="out" id="out" placeholder="Output will display here"></textarea>
+                            <textarea class="form-control terminal" name="out" id="out" placeholder="Output will display here" rows="10"></textarea>
                         </div>
                         <div class="form-group">
                             <button type="button" class="btn btn-outline-light btn-block" onclick="copy()">Copy to clipboard</button>
@@ -139,7 +139,7 @@
             </div>
         </div>
     </main>
-        
+
     <!-- Footer -->
     <?php include "../includes/footer.php" ?>
     <script type="text/javascript" charset="UTF-8" src='../assets/js/encrypt.js'></script>
