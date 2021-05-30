@@ -63,7 +63,7 @@ function start(url, hide, ext, wordlist, maxThreads) {
             maxThreads: maxThreads
         },
         success: function (res) {
-            $("#out").html(res)
+            $("#out").text(res)
             $("#start").removeAttr("disabled");
             $('#startMsg').html("<span class='text-success'>Done.</span>");
         }

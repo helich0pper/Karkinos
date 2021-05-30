@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 import socket
 import logging
 import threading
-from queue import Queue
+from queue import Empty, Queue
 from datetime import datetime
 
 app = Flask(__name__)
@@ -50,16 +50,30 @@ def getPorts(ports):
             ret.append(i)
 
     elif("," in ports):
+        if(ports[-1] == ","):
+            ports = ports[:-1]
         ret = ports.split(",")
     else:
-        ret.append(ports)
+        try:
+            ports = int(ports)
+            ret.append(ports)
+        except:
+            ret = False
 
     return ret
 
+def cleanPorts(portRange):
+    ret = []
+    for port in portRange:
+        if (port not in ret):
+            ret.append(port)
+
+    return ret
 
 @app.route('/start', methods = ['POST', 'GET'])
 def start():
     out = ""
+    target = True
        
     if request.method == "POST":
         try:
@@ -76,40 +90,48 @@ def start():
         try:
             target = socket.gethostbyname(request.form['target'])
             portRange = getPorts(request.form['port'])
+            if (portRange == False):
+                target = False
+                out = "Invalid Configuration."
+                print("[-] Invalid Configuration.\n")
+            portRange = cleanPorts(portRange)
+            if(len(portRange) == 0):
+                target = False
             print("[+] Scanning Target: " + target)
             print("[+] Ports: %s" %request.form['port'])
         except:
             print("[-] Target unreachable\n")
             out = "Could not reach target.\n"
-
-    try:
-        threads = list()
-        portCount = portRange[-1]
-        for port in portRange:
-            print("Progress: %d/%d" %(int(port), int(portCount)), end="\r")
-            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            socket.setdefaulttimeout(timeout)
-            th = threading.Thread(target=sendRequest, args=(s, target, int(port)))
-            threads.append(th)
-            th.start()
-            if len(threads) > maxThreads:
+            target = False
+    if(target):
+        try:
+            threads = list()
+            portCount = portRange[-1]
+            for port in portRange:
+                print("Progress: %d/%d" %(int(port), int(portCount)), end="\r")
+                s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                socket.setdefaulttimeout(timeout)
+                th = threading.Thread(target=sendRequest, args=(s, target, int(port)))
+                threads.append(th)
+                th.start()
+                if len(threads) > maxThreads:
+                    for thread in threads:
+                        thread.join(1)
+                    threads = list()
+        
+            try:
                 for thread in threads:
                     thread.join(1)
-                threads = list()
-        
-        try:
-            for thread in threads:
-                thread.join(1)
-        except:
-            pass
+            except:
+                pass
 
-        out = reportHead(target, request.form['port'], openPorts, maxThreads)    
-        print("\n[*] Done!")
-        print("[*] Check Karkinos for full report\n")
+            out = reportHead(target, request.form['port'], openPorts, maxThreads)    
+            print("\n[*] Done!")
+            print("[*] Check Karkinos for full report\n")
 
-    except socket.error:
-        print("[-] Socket error\n")
-        out += "Socket error.\n"
+        except socket.error:
+            print("[-] Socket error\n")
+            out += "Socket error.\n"
 
     return out
 
