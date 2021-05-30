@@ -26,7 +26,6 @@ $(document).ready(function(){
     });
     
     $("#hash").click(function(){
-        $("#hash").prop('disabled', true);
         let hashes = $("#hashHashes").val().split(" ");
         hashes = cleanDuplicates(hashes)
         let hashMethod = $('input[name="hashMethod"]:checked').val();
