@@ -54,7 +54,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             }
         }
     }
-    $ret->out = $out;
+    $ret->out = htmlspecialchars($out);
     $ret->errors = $errors;
     echo json_encode($ret);
 }

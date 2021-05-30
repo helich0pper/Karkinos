@@ -1,4 +1,3 @@
-from types import new_class
 from flask import Flask, render_template, request
 
 import socket
@@ -16,12 +15,12 @@ def shutdown_server():
         raise RuntimeError('Server not running')
     func()
 
-def startListen(PORT):
+def startListen(port):
     global SERVER_HOST
 
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-    s.bind((SERVER_HOST, PORT))
+    s.bind((SERVER_HOST, port))
     s.listen(5)
     client_socket, client_address = s.accept()
 
@@ -61,10 +60,23 @@ def shell(command, client_socket):
 def config():
     global client_socket, out
 
-    PORT = int(request.form['port'])
-    client_socket = startListen(PORT)
-    out = getData(client_socket)
-    return render_template('index.html', out=out, startMsg="")
+    try:
+        port = int(request.form['port'])
+
+        if(port > 65535):
+            out = "Invalid Port."
+            startMsg = "Port range: 1-65535"
+        elif(port <= 0):
+            out = "Invalid Port."
+            startMsg = "Port range: 1-65535"
+        else:
+            client_socket = startListen(port)
+            out = getData(client_socket)
+    except:
+        out = "Invalid Configuration."
+        startMsg = "Port range: 1-65535"
+    
+    return render_template('index.html', out=out, startMsg=startMsg, now=datetime.utcnow())
 
 @app.route('/', methods = ['POST', 'GET'])
 def index():
