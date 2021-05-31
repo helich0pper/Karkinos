@@ -59,6 +59,8 @@ def shell(command, client_socket):
 @app.route('/config', methods = ['POST'])
 def config():
     global client_socket, out
+    
+    startMsg = ""
 
     try:
         port = int(request.form['port'])
