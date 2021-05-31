@@ -62,14 +62,6 @@ def getPorts(ports):
 
     return ret
 
-def cleanPorts(portRange):
-    ret = []
-    for port in portRange:
-        if (port not in ret):
-            ret.append(port)
-
-    return ret
-
 @app.route('/start', methods = ['POST', 'GET'])
 def start():
     out = ""
@@ -94,16 +86,13 @@ def start():
                 target = False
                 out = "Invalid Configuration."
                 print("[-] Invalid Configuration.\n")
-            portRange = cleanPorts(portRange)
-            if(len(portRange) == 0):
-                target = False
-            print("[+] Scanning Target: " + target)
-            print("[+] Ports: %s" %request.form['port'])
         except:
             print("[-] Target unreachable\n")
             out = "Could not reach target.\n"
             target = False
     if(target):
+        print("[+] Scanning Target: " + target)
+        print("[+] Ports: %s" %request.form['port'])
         try:
             threads = list()
             portCount = portRange[-1]

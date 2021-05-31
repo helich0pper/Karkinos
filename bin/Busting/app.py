@@ -32,7 +32,7 @@ def sendRequest(url, word, hideCode):
     try:
         res = str(requests.get(url + "/" + word).status_code)
         if res not in hideCode and res != 0:
-            ret = str(res) + "   -   " + word + " - " + str(datetime.now().strftime("%H:%M:%S"))
+            ret = res + "   -   " + word + " - " + str(datetime.now().strftime("%H:%M:%S"))
         else:
             ret = 0
     except:
