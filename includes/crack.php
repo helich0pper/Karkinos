@@ -41,18 +41,62 @@ function hashString($line, $method){
     return $ret;
 }
 
-function crack($wordlist, $input, $method){
+function checkPotfile($input){
     $ret = false;
-    while(($line = fgets($wordlist)) !== false){
+    $potfile = fopen("../wordlists/karkinos.potfile", "r");
+    while(($line = fgets($potfile)) !== false){
         $line = trim($line, "\r\n");
-        if(hashString($line, $method) == $input){
-            $ret = $line;
+        $pothashes = explode(":", $line);
+
+        if($pothashes[0] == $input){
+            $ret = $pothashes[1];
         }
     }
-    if(!$ret){
-        $ret = "Password not found.";
+
+    return $ret;
+}
+
+function writePotfile($hash, $password){
+    $ret = false;
+    $potfile = fopen("../wordlists/karkinos.potfile", "a");
+    $out = $hash.":".$password."\n";
+    $fwrite = fwrite($potfile, $out);
+
+    if ($fwrite !== false) {
+        $ret = true;
     }
-    fclose($wordlist);
+
+    fclose($potfile);
+    
+    return $ret;
+}
+
+function crack($wordlist, $input, $method){
+    $ret = false;
+    $potfile = checkPotfile($input);
+
+    if($potfile === false){
+        while(($line = fgets($wordlist)) !== false){
+            $line = trim($line, "\r\n");
+            if(hashString($line, $method) == $input){
+                $ret = $line;
+                writePotfile($input, $line);
+                set_error_handler(function() { /* Ignore errors. Allows for cracking without SQLite installed. */ });
+                $db = new SQLite3('../db/main.db');
+                $db->query('UPDATE hashes SET '.$method.' = '.$method.'+1');
+                $db->close();
+                break;
+            }
+        }
+        if(!$ret){
+            $ret = "Password not found.";
+        }
+        fclose($wordlist);
+    }
+    else{
+        $ret = $potfile;
+    }
+
     return $ret;
 }
 
@@ -82,13 +126,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                 break;
             }
             array_push($out, htmlspecialchars($input), htmlspecialchars($method), htmlspecialchars($password));
-            if($password !== "Password not found."){
-                set_error_handler(function() { /* Ignore errors. Allows for cracking without SQLite installed. */ });
-                $db = new SQLite3('../db/main.db');
-                $db->query('UPDATE hashes SET '.$method.' = '.$method.'+1');
-                $db->close();
-            }
-
         }else{
             array_push($out, htmlspecialchars($input), "Unknown", "Unknown");
         }
