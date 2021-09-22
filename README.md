@@ -1,11 +1,11 @@
 # Disclaimer 
-Use this tool to make penetration tests or any hacking CTF's more beginner-friendly. This tool should be used on applications/networks that you have permission to attack only. Any misuse or damage caused will be solely the users’ responsibility. <br>
+This tool should be used on applications/networks that you have permission to attack only. Any misuse or damage caused will be solely the users’ responsibility. <br>
 
 # What is Karkinos?
 Karkinos is a light-weight 'Swiss Army Knife' for penetration testing and/or hacking CTF's. Currently, Karkinos offers the following:
 * Encoding/Decoding characters
 * Encrypting/Decrypting text or files
-* Reverse shell handling
+* 3 Modules
 * Cracking and generating hashes
 
 # Dependencies 
