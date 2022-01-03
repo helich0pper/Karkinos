@@ -1,5 +1,5 @@
 FROM php:7.4.27-fpm-buster
-MAINTAINER "asabhi6776"
+LABEL maintainer="asabhi6776"
 RUN export DEBIAN_FRONTEND=noninteractive
 RUN apt update && apt install git unzip python3 python3-pip python3-dev build-essential -y
 RUN apt install software-properties-common -y
