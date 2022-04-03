@@ -133,4 +133,5 @@ Below are features to be added/fixed:
 # Find me on
 <a href="https://twitter.com/helich0pper">Twitter</a>
 
-
+# Kinnnda broke...
+[![Donate](https://i.ibb.co/QfXxbtG/coffee.png)](https://www.paypal.com/donate/?hosted_button_id=8SQC6K8F5MA9L)
