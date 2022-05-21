@@ -9,7 +9,7 @@ Karkinos is a light-weight 'Swiss Army Knife' for penetration testing and/or hac
 * Cracking and generating hashes
 
 # Dependencies 
-* Any server capable of hosting PHP 
+* Any server capable of hosting PHP
 * Tested with PHP 7.4.9
 * Tested with Python 3.8 <br>
   Make sure it is in your path as: <br>
@@ -35,10 +35,10 @@ This installation guide assumes you have all the dependencies. A Wiki page with 
 4. ```cd wordlists && unzip passlist.zip```
 You can also unzip it manually using file explorer. Just make sure passlist.txt is in **wordlists** directory.
 5. ```Make sure you have write privileges for db/main.db```
-6. Enable ```extension=mysqli``` in your php.ini file. <br>
-If you don't know where to find this, refer to the PHP [docs](https://www.php.net/manual/en/configuration.file.php#:~:text=d%20php%20PHP%20will%20load,ini%20as%20configuration%20files.).
-Note: MySQLi is only used to store statistics.
-7. Thats it! Now just host it using your preferred web server or run: ```php -S 127.0.0.1:8888``` in the Karkinos directory. <br> <br>
+6. Enable ```extension=sqlite3``` in your php.ini file. You will also need to install it using ```sudo apt-get install php7.0-sqlite3```. **Replace "7.0" with your PHP version!** ```php --version```<br>
+Note: MySQLi is used to store statistics such as the total number of cracked hashes.
+7. Thats it! Now just host it using your preferred web server **that supports multithreading** eg. Apache Server or Nginx. <br>
+   Warning: Using the built in web server ```php -S 127.0.0.1:8888``` in the Karkinos directory uses a **single thread**. You will only be able to use 1 module at a time! (it may stall until the task is complete) <br> <br>
 **Important: using port 5555, 5556, or 5557 will conflict with the Modules** <br>
 If you insist on using these ports, change the ```PORT``` value in: 
 - ```/bin/Server/app.py Line 87```
@@ -51,10 +51,10 @@ If you insist on using these ports, change the ```PORT``` value in:
 4. ```cd wordlists && unzip passlist.zip``` <br>
 You can also unzip it manually using file explorer. Just make sure passlist.txt is in **wordlists** directory.
 5. ```Make sure you have write privileges for db/main.db```
-6. Enable ```extension=mysqli.dll``` in your php.ini file. <br>
-If you don't know where to find this, refer to the PHP [docs](https://www.php.net/manual/en/configuration.file.php#:~:text=d%20php%20PHP%20will%20load,ini%20as%20configuration%20files.).
-Note: MySQLi is only used to store statistics
-7. Thats it! Now just host it using your preferred web server or run: ```php -S 127.0.0.1:8888``` in the Karkinos directory. <br> <br>
+6. Enable ```extension=php_sqlite3.dll``` in your php.ini file. Refer to the installation page [here](https://www.php.net/manual/en/sqlite3.installation.php).<br>
+Note: MySQLi is used to store statistics such as the total number of cracked hashes.
+7. Thats it! Now just host it using your preferred web server **that supports multithreading** eg. Apache Server or Nginx. <br>
+   Warning: Using the built in web server ```php -S 127.0.0.1:8888``` in the Karkinos directory uses a **single thread**. You will not be able to multitask modules! (it may stall until the task is complete) <br> <br>
 **Important: using port 5555, 5556, or 5557 will conflict with the Modules** <br>
 If you insist on using these ports, change the ```PORT``` value in: 
 - ```/bin/Server/app.py Line 87```
