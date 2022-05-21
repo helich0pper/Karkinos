@@ -29,6 +29,7 @@ More information can be found in the Modules section. <br> <br>
 # Installing
 This installation guide assumes you have all the dependencies. A Wiki page with troubleshooting steps can be found <a href="https://helich0pper.github.io/karkinos/" target="_blank">here</a>.
 ## Linux/BSD
+A video going through these steps can be found [here](https://youtu.be/9LJpzxbm3oU) <br>
 1. ```git clone https://github.com/helich0pper/Karkinos.git```
 2. ```cd Karkinos```
 3. ```pip3 install -r requirements.txt```
