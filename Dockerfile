@@ -1,4 +1,4 @@
-FROM php:7.4.27-fpm-buster
+FROM php:7.4-fpm-buster
 LABEL maintainer="asabhi6776"
 RUN export DEBIAN_FRONTEND=noninteractive
 RUN apt update && apt install git unzip python3 python3-pip python3-dev build-essential -y
