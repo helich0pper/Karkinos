@@ -137,4 +137,3 @@ Below are features to be added/fixed:
 <a href="https://twitter.com/helich0pper">Twitter</a>
 
 # brokeness patched LOL be strong friends
-[![Donate](https://i.ibb.co/QfXxbtG/coffee.png)](https://www.paypal.com/donate/?hosted_button_id=8SQC6K8F5MA9L)
