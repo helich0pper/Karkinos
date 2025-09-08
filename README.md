@@ -1,4 +1,5 @@
 # Disclaimer 
+This is an OLD project I did in university... all code was improvised as I progressed, and hardly anything was planned.
 This tool should be used on applications/networks that you have permission to attack only. Any misuse or damage caused will be solely the users’ responsibility. <br>
 
 # What is Karkinos?
